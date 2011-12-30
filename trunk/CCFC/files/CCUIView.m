@@ -364,4 +364,50 @@
 	return [self.subviews objectAtIndex:index];
 }
 
+// add a layer by rect and color
+- (CALayer *)addLayer:(CGRect)rect color:(UIColor *)color
+{
+	CALayer *layer = [CALayer layer];
+	layer.backgroundColor = color.CGColor;
+	layer.frame = rect;
+	[self.layer addSublayer:layer];
+	return layer;
+}
+
+// get the same level views arr that are behind self
+- (NSArray *)getBackwardsViews
+{
+	UIView *superView = self.superview;
+	NSArray *arr = superView.subviews;
+	NSMutableArray *retArr = [NSMutableArray array];
+	
+	BOOL canAdd = FALSE;
+	for(UIView *view in arr)
+	{
+		if(canAdd)
+			[retArr addObject:view];
+		if(self == view)
+			canAdd = TRUE;
+	}
+	return retArr;
+}
+
+// get the same level views arr that are in front of self
+- (NSArray *)getForewardsViews
+{
+	UIView *superView = self.superview;
+	NSArray *arr = superView.subviews;
+	NSMutableArray *retArr = [NSMutableArray array];
+	
+	BOOL canAdd = TRUE;
+	for(UIView *view in arr)
+	{
+		if(self == view)
+			canAdd = FALSE;
+		if(canAdd)
+			[retArr addObject:view];
+	}
+	return retArr;
+}
+
 @end

@@ -55,6 +55,21 @@
 	return [UIImage imageWithCGImage:imagePartRef];
 }
 
+// returns UIImage * from text
++ (UIImage *)imageFromText:(NSString *)text font:(UIFont *)font
+{            
+	CGSize size  = [text sizeWithFont:font];     
+	UIGraphicsBeginImageContext(size);  
+	
+	CGContextRef ctx = UIGraphicsGetCurrentContext();       
+	[text drawAtPoint:CGPointMake(0, 0) withFont:font];      
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();          
+	UIGraphicsEndImageContext(); 
+	CGContextRelease(ctx);
+	
+	return image;  
+} 
+
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 + (UIImage *)getFullScreenImg
 {

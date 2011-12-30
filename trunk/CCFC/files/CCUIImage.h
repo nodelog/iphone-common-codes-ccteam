@@ -49,6 +49,10 @@ extern "C" {
 // get part of the image
 - (UIImage *)getPartOfImage:(CGRect)partRect;
 
+// returns UIImage * from text
++ (UIImage *)imageFromText:(NSString *)text font:(UIFont *)font;
+
+
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 + (UIImage *)getFullScreenImg;
 #endif

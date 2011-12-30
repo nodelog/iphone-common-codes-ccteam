@@ -51,6 +51,8 @@
 #import "CCUISlider.h"
 #import "CCCamera.h"
 #import "CCNSDate.h"
+#import "CCFuntion.h"
+#import "CCLanguage.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -217,10 +219,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 #pragma mark CCUITextField
 	// test CCUITextField
 	// test addClearButton  // ok
-	//UITextField *textField = [UITextField createCommonTextField:
-//							  CGRectMake(20, 160, 200, 40)];
+//	UITextField *textField = [UITextField createCommonTextField:
+//							  CGRectMake(20, 160, 200, 30)];
 //	[textField addClearButton];
 //	[self.navigationController.view addSubview:textField];
+	
+	// leftView	// ok
+//	CGRect rect = CGRectMake(0, 0, 40, 30);
+//	[textField addLeftview:rect text:@"Info:"];
+	
 	
 #pragma mark CCKeyboard
 	// test getKeyboardView getKeyboardViewName	// ok
@@ -283,7 +290,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	CFAbsoluteTime myCurrentTime = CFAbsoluteTimeGetCurrent();
 //	LOG_DOUBLE(myCurrentTime);
 	
-
+	
+#pragma mark CCUIView
+	// test getBackwardsViews  getForewardsViews	// ok
+//	LOG_ARR(self.navigationController.view.subviews);
+//	LOG_ARR([btn getBackwardsViews]);
+//	LOG_ARR([btn getForewardsViews]);
+	
+	
+	
 }
 
 #pragma mark application delegate
@@ -301,10 +316,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	[self.navigationController.view addSubview:btn];
 	
 	// add a textView
-	UITextView *textView = [UITextView createCommonTextView:CGRectMake(0, 60, 200, 40)
-												   withText:@""];
-	textView.editable = TRUE;
-	[self.navigationController.view addSubview:textView];
+//	UITextView *textView = [UITextView createCommonTextView:CGRectMake(0, 60, 200, 40)
+//												   withText:@""];
+//	textView.editable = TRUE;
+//	[self.navigationController.view addSubview:textView];
 	
 #pragma mark add uncaughtExceptionHandler
 	// NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
@@ -771,6 +786,16 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	[img saveImgToPhotosAlbum];
 	*/
 	
+	// imageFromText	// ok
+//	UIImage *img = [UIImage imageFromText:@"xichen" font:[UIFont systemFontOfSize:16.0f]];
+//	LOG_ID(img);
+//	UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
+//	imgView.frame = CGRectMake(40, 40, 50, 30);
+//	[self.navigationController.view addSubview:imgView];
+//	[imgView release];
+	
+	
+	
 #pragma mark CCNSArray
 	// test CCNSArray
 	// ok
@@ -836,6 +861,17 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	NSString *str1 = @"陈曦";
 //	LOG_BOOL([NSPredicate isChineseChar:str]);
 //	LOG_BOOL([NSPredicate isChineseChar:str1]);
+	
+#pragma mark CCFuntion
+	// test isFuntionExist	// ok
+//	LOG_BOOL([CCFuntion isFuntionExist:UIGraphicsBeginPDFContextToFile]);
+
+	
+#pragma mark CCLanguage
+	// test getAllLanguages	// ok
+//	LOG_ARR([CCLanguage getAllLanguages]);
+
+	
 	
 #pragma mark TestEnd
 	

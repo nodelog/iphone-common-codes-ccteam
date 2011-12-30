@@ -25,4 +25,30 @@
 	[self setClearButtonMode:UITextFieldViewModeAlways];
 }
 
+// add a leftView
+- (UILabel *)addLeftview:(CGRect)leftViewRect text:(NSString *)text
+{
+	UILabel *label = [[UILabel alloc] initWithFrame:leftViewRect];
+	label.text = text;
+	label.backgroundColor = [UIColor clearColor];
+	label.textColor = [UIColor grayColor];
+	self.leftViewMode = UITextFieldViewModeAlways;
+	self.leftView = label;
+	self.borderStyle = UITextBorderStyleRoundedRect;
+	
+	[label release];
+	return label;
+}
+
+// add a leftView by a label
+- (void)addLeftview:(UILabel *)label
+{
+	label.backgroundColor = [UIColor clearColor];
+	label.textColor = [UIColor grayColor];
+	
+	self.leftViewMode = UITextFieldViewModeAlways;
+	self.leftView = label;
+	self.borderStyle = UITextBorderStyleRoundedRect;
+}
+
 @end

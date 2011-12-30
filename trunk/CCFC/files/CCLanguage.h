@@ -17,4 +17,8 @@
 // 获取系统当前使用的本地化语言
 + (NSString *)getSystemLanguage;
 
+// get all languages that the system supports
++ (NSArray *)getAllLanguages;
+
+
 @end
