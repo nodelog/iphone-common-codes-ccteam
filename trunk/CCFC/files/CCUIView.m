@@ -127,11 +127,11 @@
 }
 
 // 创建一个指定区域大小的view
-+ (UIView *)createView:(const CGRect *)rect
++ (UIView *)createView:(CGRect)rect
 {
 	UIView *view = UI_ALLOC_CREATE(UIView, 
-								   rect->origin.x, rect->origin.y, 
-								   rect->size.width, rect->size.height);
+								   rect.origin.x, rect.origin.y, 
+								   rect.size.width, rect.size.height);
 	return [view autorelease];
 }
 
@@ -145,7 +145,7 @@
 }
 
 // 创建一个指定区域大小的透明view
-+ (UIView *)createTransparentView:(const CGRect *)rect
++ (UIView *)createTransparentView:(CGRect)rect
 {
 	UIView *view = [self createView:rect];
 	if(!view)
@@ -362,6 +362,22 @@
 - (UIView *)getSubviewByIndex:(int)index
 {
 	return [self.subviews objectAtIndex:index];
+}
+
+// get the first subview
+- (UIView *)getFirstSubview
+{
+	if([self.subviews count])
+		return [self.subviews objectAtIndex:0];
+	return nil;
+}
+
+// get the last subview
+- (UIView *)getLastSubview
+{
+	if([self.subviews count])
+		return [self.subviews objectAtIndex:[self.subviews count] - 1];
+	return nil;
 }
 
 // add a layer by rect and color

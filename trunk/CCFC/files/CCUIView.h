@@ -82,13 +82,13 @@
 - (void)hideAllSubViews;
 
 // 创建一个指定区域大小的view
-+ (UIView *)createView:(const CGRect *)rect;
++ (UIView *)createView:(CGRect)rect;
 
 // 创建一个和指定view相同大小的view
 + (UIView *)createViewByView:(UIView *)view;
 
 // 创建一个指定区域大小的透明view
-+ (UIView *)createTransparentView:(const CGRect *)rect;
++ (UIView *)createTransparentView:(CGRect)rect;
 
 // 创建一个和指定view相同大小的透明view
 + (UIView *)createTransparentViewByView:(UIView *)view;
@@ -154,6 +154,13 @@
 
 // get the UIView that is at the index of subviews
 - (UIView *)getSubviewByIndex:(int)index;
+
+// get the first subview
+- (UIView *)getFirstSubview;
+
+// get the last subview
+- (UIView *)getLastSubview;
+
 
 // add a layer by rect and color
 - (CALayer *)addLayer:(CGRect)rect color:(UIColor *)color;

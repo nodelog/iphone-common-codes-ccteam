@@ -12,7 +12,8 @@
 #import "CCMapAnnotation.h"
 
 @interface RootViewController : UITableViewController 
-							<CLLocationManagerDelegate, MKMapViewDelegate>
+							<CLLocationManagerDelegate, MKMapViewDelegate,
+							UITableViewDelegate, UITableViewDataSource>
 {
 	IBOutlet	UITableView			*_tableView;
 	

@@ -70,9 +70,16 @@
 // returns whether the device is jailbroken or not
 + (BOOL)isJailBroken;
 
+// get the device version
++ (NSString *)deviceVersion;
 
 #if CC_ENABLE_PRIVATE_API
 + (NSString *)buildVersion;	// eg, ios 4.3.3, returns @"8J2".
+
+// get the imei string	// not ok
++ (NSString *)getImei;
+
+
 #endif
 
 

@@ -53,6 +53,7 @@
 #import "CCNSDate.h"
 #import "CCFuntion.h"
 #import "CCLanguage.h"
+#import "CCUIApplication.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -297,7 +298,11 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	LOG_ARR([btn getBackwardsViews]);
 //	LOG_ARR([btn getForewardsViews]);
 	
-	
+#pragma mark UIApplication
+	// test audio-player-event://		// not ok
+#if 0
+	[UIApplication openUrl:@"audio-player-event://?uicmd=show-purchased-playlist"];
+#endif
 	
 }
 
@@ -721,8 +726,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	*/
 	
 	// test getCarrierCode	// ok
-	LOG_STR([CCPhone getCarrierCode]);
-	LOG_STR([CCPhone getSIMCarrierName:[CCPhone getCarrierCode]]);
+//	LOG_STR([CCPhone getCarrierCode]);
+//	LOG_STR([CCPhone getSIMCarrierName:[CCPhone getCarrierCode]]);
 	
 #pragma mark CCUIDevice
 	// test CCUIDevice	
@@ -730,6 +735,12 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	/*
 	LOG_STR([UIDevice buildVersion]);
 	*/
+	
+	// test deviceVersion	// ok
+//	LOG_STR([UIDevice deviceVersion]);
+	
+	// test imei	// not ok
+//	LOG_STR([UIDevice getImei]);
 	
 #pragma mark CCPhoto
 	// test CCPhoto	

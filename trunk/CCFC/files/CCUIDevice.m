@@ -13,6 +13,7 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import <sys/sysctl.h>
+#import <sys/utsname.h>
 
 #if CC_ENABLE_PRIVATE_API
 @interface UIDevice(ccPrivate)
@@ -180,10 +181,25 @@
 	return [CCFileUtil isFileExist:@"/Applications/Cydia.app"];
 }
 
+// get the device version
++ (NSString *)deviceVersion
+{
+	struct utsname u;
+	uname(&u);
+	return [NSString stringWithUTF8String:u.machine];
+}
+
 #if CC_ENABLE_PRIVATE_API
 + (NSString *)buildVersion
 {
 	return [[UIDevice currentDevice] buildVersion];
+}
+
+// get the imei string	// not ok
++ (NSString *)getImei
+{
+	Class cls = NSClassFromString(@"NetworkController");
+    return [[cls sharedInstance] IMEI];
 }
 
 #endif

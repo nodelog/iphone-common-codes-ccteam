@@ -16,6 +16,8 @@
 #import "CCUISearchBar.h"
 #import "CCTestMacros.h"
 #import <MapKit/MKAnnotation.h>
+#import "CCNSTimer.h"
+#import <objc/runtime.h>
 
 @implementation RootViewController
 
@@ -63,10 +65,46 @@
 	LOG_ENTER_FUNC(onTap);
 }
 
+#pragma mark UITableView delegate
+- (void)onGetViews:(id)timer
+{
+	LOG_ARR(_tableView.subviews);
+	LOG_ID([_tableView recursiveDescription]);
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	_tableView.showsVerticalScrollIndicator = YES;
+	_tableView.delegate = self;
+	_tableView.dataSource = self;
+	[_tableView reloadData];
+	
+#pragma mark objc runtime
+	// test objc_msgSend	// ok
+//	int n = (int)objc_msgSend(_tableView, @selector(retainCount));
+//	LOG_INT(n);
+	
+	// test object_getInstanceVariable	// ok
+//	id verticalIndicatorImgView; 
+//	object_getInstanceVariable(_tableView, "_verticalScrollIndicator", (void **)&verticalIndicatorImgView);
+//	LOG_ID(verticalIndicatorImgView);
+	//[verticalIndicatorImgView removeFromSuperview];
+	
+	
+	// [_tableView addSubview:[UIView createView:CGRectZero]];
+#pragma mark UITableView
+	// get the indicator view and hide it
+	//[NSTimer createCommonRepeatTimer:self sel:@selector(onGetViews:) timeInterval:1.0f];
+	// LOG_ARR(_tableView.subviews);
+	// LOG_ID([_tableView recursiveDescription]);
+	// UIView *view = [_tableView getSubviewByIndex:[_tableView.subviews count] - 1];
+	// LOG_ID(view);
+	// view.hidden = YES;
+	
+	// hideVerticalScrollIndicator ok
+//	[_tableView hideVerticalScrollIndicator];
+	
 	
 	// add a _webView
 	/*
@@ -211,7 +249,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
 }
 
 // Customize the appearance of table view cells.
@@ -225,6 +263,7 @@
     }
 
     // Configure the cell.
+	cell.textLabel.text = @"1";
     return cell;
 }
 

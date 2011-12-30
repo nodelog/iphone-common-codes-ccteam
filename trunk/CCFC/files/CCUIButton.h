@@ -22,7 +22,8 @@
     withHighlightedImg:(NSString *)highLightBgImg;
 
 #if CC_ENABLE_PUBLIC_API_EXTEND 
-- (id)buttonWithType:(int)type;	// you can pass argument by 100 or 114 and so on
+// the aviable arguments are: 100, 101, 102, 110, 111, 114 and so on
+- (id)buttonWithType:(int)type;	
 #endif
 
 @end
