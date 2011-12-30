@@ -31,4 +31,9 @@
 	return @"http://maps.google.com/maps?q=";
 }
 
++ (NSString *)itunesStorePrefix
+{
+	return @"itms://";
+}
+
 @end

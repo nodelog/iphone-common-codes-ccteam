@@ -173,6 +173,10 @@
 		C74A959714ADB3E100141F20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A959614ADB3E100141F20 /* CoreLocation.framework */; };
 		C74A95B514ADB5D700141F20 /* CCTestMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A95B414ADB5D700141F20 /* CCTestMacros.m */; };
 		C74A95CC14ADB7C400141F20 /* CCMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A95CB14ADB7C400141F20 /* CCMapAnnotation.m */; };
+		C74A9BC814ADE8FA00141F20 /* CCUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A9BC714ADE8FA00141F20 /* CCUIBarButtonItem.m */; };
+		C74A9BCF14ADE9DB00141F20 /* CCUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A9BCE14ADE9DB00141F20 /* CCUISegmentedControl.m */; };
+		C74A9CC214ADFDB300141F20 /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A9CB614ADFB9E00141F20 /* libobjc.A.dylib */; };
+		C74A9CFF14AE04D100141F20 /* CCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A9CFE14AE04D100141F20 /* CCRuntime.m */; };
 		C74AFBAB14AAAA3100CACF9D /* CCUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFBAA14AAAA3100CACF9D /* CCUIViewController.m */; };
 		C74AFBF114AAB36B00CACF9D /* CCSize.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFBF014AAB36B00CACF9D /* CCSize.m */; };
 		C74AFBFF14AAB82300CACF9D /* CCRect.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFBFE14AAB82300CACF9D /* CCRect.m */; };
@@ -479,6 +483,13 @@
 		C74A95B414ADB5D700141F20 /* CCTestMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTestMacros.m; sourceTree = "<group>"; };
 		C74A95CA14ADB7C400141F20 /* CCMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMapAnnotation.h; sourceTree = "<group>"; };
 		C74A95CB14ADB7C400141F20 /* CCMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMapAnnotation.m; sourceTree = "<group>"; };
+		C74A9BC614ADE8FA00141F20 /* CCUIBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIBarButtonItem.h; sourceTree = "<group>"; };
+		C74A9BC714ADE8FA00141F20 /* CCUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIBarButtonItem.m; sourceTree = "<group>"; };
+		C74A9BCD14ADE9DB00141F20 /* CCUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUISegmentedControl.h; sourceTree = "<group>"; };
+		C74A9BCE14ADE9DB00141F20 /* CCUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUISegmentedControl.m; sourceTree = "<group>"; };
+		C74A9CB614ADFB9E00141F20 /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
+		C74A9CFD14AE04D100141F20 /* CCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRuntime.h; sourceTree = "<group>"; };
+		C74A9CFE14AE04D100141F20 /* CCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRuntime.m; sourceTree = "<group>"; };
 		C74AFBA914AAAA3100CACF9D /* CCUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIViewController.h; sourceTree = "<group>"; };
 		C74AFBAA14AAAA3100CACF9D /* CCUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIViewController.m; sourceTree = "<group>"; };
 		C74AFBEF14AAB36B00CACF9D /* CCSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSize.h; sourceTree = "<group>"; };
@@ -687,6 +698,7 @@
 				C7416DC914A9C09B0000F9AA /* GameKit.framework in Frameworks */,
 				C74A956414ADB15700141F20 /* MapKit.framework in Frameworks */,
 				C74A959714ADB3E100141F20 /* CoreLocation.framework in Frameworks */,
+				C74A9CC214ADFDB300141F20 /* libobjc.A.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +962,7 @@
 		C7FBB92F149AEFE60023DAF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C74A9CB614ADFB9E00141F20 /* libobjc.A.dylib */,
 				C74A959614ADB3E100141F20 /* CoreLocation.framework */,
 				C74A956314ADB15700141F20 /* MapKit.framework */,
 				C7416DC814A9C09B0000F9AA /* GameKit.framework */,
@@ -1225,6 +1238,12 @@
 				C74A95B414ADB5D700141F20 /* CCTestMacros.m */,
 				C74A95CA14ADB7C400141F20 /* CCMapAnnotation.h */,
 				C74A95CB14ADB7C400141F20 /* CCMapAnnotation.m */,
+				C74A9BC614ADE8FA00141F20 /* CCUIBarButtonItem.h */,
+				C74A9BC714ADE8FA00141F20 /* CCUIBarButtonItem.m */,
+				C74A9BCD14ADE9DB00141F20 /* CCUISegmentedControl.h */,
+				C74A9BCE14ADE9DB00141F20 /* CCUISegmentedControl.m */,
+				C74A9CFD14AE04D100141F20 /* CCRuntime.h */,
+				C74A9CFE14AE04D100141F20 /* CCRuntime.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1576,6 +1595,9 @@
 				C74A94B514AD96D200141F20 /* CCFuntion.m in Sources */,
 				C74A95B514ADB5D700141F20 /* CCTestMacros.m in Sources */,
 				C74A95CC14ADB7C400141F20 /* CCMapAnnotation.m in Sources */,
+				C74A9BC814ADE8FA00141F20 /* CCUIBarButtonItem.m in Sources */,
+				C74A9BCF14ADE9DB00141F20 /* CCUISegmentedControl.m in Sources */,
+				C74A9CFF14AE04D100141F20 /* CCRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,13 +12,23 @@
 @implementation NSTimer(cc)
 
 // create a common timer
-+ (NSTimer *)createCommonTimer:(SEL)sel timeInterval:(NSTimeInterval)interval
++ (NSTimer *)createCommonTimer:(id)target sel:(SEL)sel timeInterval:(NSTimeInterval)interval
 {
 	return [NSTimer scheduledTimerWithTimeInterval:interval
-											target:self
+											target:target
 										  selector:sel
 										  userInfo:nil
 										   repeats:NO];
+}
+
+// create a common repeatable timer
++ (NSTimer *)createCommonRepeatTimer:(id)target sel:(SEL)sel timeInterval:(NSTimeInterval)interval
+{
+	return [NSTimer scheduledTimerWithTimeInterval:interval
+											target:target
+										  selector:sel
+										  userInfo:nil
+										   repeats:YES];
 }
 
 // safe invalidate

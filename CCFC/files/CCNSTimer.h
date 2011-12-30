@@ -12,7 +12,10 @@
 @interface NSTimer(cc)
 
 // create a common timer
-+ (NSTimer *)createCommonTimer:(SEL)sel timeInterval:(NSTimeInterval)interval;
++ (NSTimer *)createCommonTimer:(id)target sel:(SEL)sel timeInterval:(NSTimeInterval)interval;
+
+// create a common repeatable timer
++ (NSTimer *)createCommonRepeatTimer:(id)target sel:(SEL)sel timeInterval:(NSTimeInterval)interval;
 
 // safe invalidate
 - (void)safeInvalidate;
