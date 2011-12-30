@@ -1,5 +1,5 @@
 //
-//  CCAudio.m
+//  CCAudio.mm
 //  CCFC
 //
 //  Created by xichen on 11-12-18.
