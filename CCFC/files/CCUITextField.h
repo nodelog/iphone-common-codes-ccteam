@@ -17,5 +17,10 @@
 // set the clear button status
 - (void)addClearButton;
 
+// add a leftView
+- (UILabel *)addLeftview:(CGRect)leftViewRect text:(NSString *)text;
+
+// add a leftView by a label
+- (void)addLeftview:(UILabel *)label;
 
 @end

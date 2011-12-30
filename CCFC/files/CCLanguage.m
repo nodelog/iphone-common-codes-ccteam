@@ -22,4 +22,11 @@
         return @"";
 }
 
+// get all languages that the system supports
++ (NSArray *)getAllLanguages
+{
+	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    return [defs objectForKey:@"AppleLanguages"];
+}
+
 @end

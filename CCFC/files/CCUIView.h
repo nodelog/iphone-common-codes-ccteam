@@ -155,6 +155,15 @@
 // get the UIView that is at the index of subviews
 - (UIView *)getSubviewByIndex:(int)index;
 
+// add a layer by rect and color
+- (CALayer *)addLayer:(CGRect)rect color:(UIColor *)color;
+
+// get the same level views arr that are behind self
+- (NSArray *)getBackwardsViews;
+
+// get the same level views arr that are in front of self
+- (NSArray *)getForewardsViews;
+
 
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 - (id)scriptingInfoWithChildren;	// the struct info of the view's children

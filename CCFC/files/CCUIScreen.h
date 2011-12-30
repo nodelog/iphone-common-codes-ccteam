@@ -31,6 +31,9 @@
 #define	MACRO_PPI_ON_IPHONE4				326
 #define	MACRO_PPI_UNDER_IPHONE4				163
 
+#define	MACRO_DEFAULT_IPAD_SCR_WIDTH		768
+#define	MACRO_DEFAULT_IPAD_SCR_HEIGHT		1024
+
 @interface UIScreen(cc) 
 
 - (CGFloat)width;

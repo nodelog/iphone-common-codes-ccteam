@@ -168,6 +168,11 @@
 		C7416EDB14AA1D870000F9AA /* CCUISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7416EDA14AA1D870000F9AA /* CCUISearchBar.m */; };
 		C742880614A08CB900838987 /* CCUIPasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = C742880514A08CB900838987 /* CCUIPasteboard.m */; };
 		C742888F14A0A2F700838987 /* Setting.xml in Resources */ = {isa = PBXBuildFile; fileRef = C742888E14A0A2F700838987 /* Setting.xml */; };
+		C74A94B514AD96D200141F20 /* CCFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A94B414AD96D200141F20 /* CCFuntion.m */; };
+		C74A956414ADB15700141F20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A956314ADB15700141F20 /* MapKit.framework */; };
+		C74A959714ADB3E100141F20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A959614ADB3E100141F20 /* CoreLocation.framework */; };
+		C74A95B514ADB5D700141F20 /* CCTestMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A95B414ADB5D700141F20 /* CCTestMacros.m */; };
+		C74A95CC14ADB7C400141F20 /* CCMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A95CB14ADB7C400141F20 /* CCMapAnnotation.m */; };
 		C74AFBAB14AAAA3100CACF9D /* CCUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFBAA14AAAA3100CACF9D /* CCUIViewController.m */; };
 		C74AFBF114AAB36B00CACF9D /* CCSize.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFBF014AAB36B00CACF9D /* CCSize.m */; };
 		C74AFBFF14AAB82300CACF9D /* CCRect.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFBFE14AAB82300CACF9D /* CCRect.m */; };
@@ -466,6 +471,14 @@
 		C742880414A08CB900838987 /* CCUIPasteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIPasteboard.h; sourceTree = "<group>"; };
 		C742880514A08CB900838987 /* CCUIPasteboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIPasteboard.m; sourceTree = "<group>"; };
 		C742888E14A0A2F700838987 /* Setting.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Setting.xml; sourceTree = "<group>"; };
+		C74A94B314AD96D200141F20 /* CCFuntion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFuntion.h; sourceTree = "<group>"; };
+		C74A94B414AD96D200141F20 /* CCFuntion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFuntion.m; sourceTree = "<group>"; };
+		C74A956314ADB15700141F20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C74A959614ADB3E100141F20 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C74A95B314ADB5D700141F20 /* CCTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTestMacros.h; sourceTree = "<group>"; };
+		C74A95B414ADB5D700141F20 /* CCTestMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTestMacros.m; sourceTree = "<group>"; };
+		C74A95CA14ADB7C400141F20 /* CCMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMapAnnotation.h; sourceTree = "<group>"; };
+		C74A95CB14ADB7C400141F20 /* CCMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMapAnnotation.m; sourceTree = "<group>"; };
 		C74AFBA914AAAA3100CACF9D /* CCUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIViewController.h; sourceTree = "<group>"; };
 		C74AFBAA14AAAA3100CACF9D /* CCUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIViewController.m; sourceTree = "<group>"; };
 		C74AFBEF14AAB36B00CACF9D /* CCSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSize.h; sourceTree = "<group>"; };
@@ -672,6 +685,8 @@
 				C79D404B149EE79D00C1FA82 /* libxml2.2.dylib in Frameworks */,
 				C7B69D4814A4240E0048CA0F /* CoreTelephony.framework in Frameworks */,
 				C7416DC914A9C09B0000F9AA /* GameKit.framework in Frameworks */,
+				C74A956414ADB15700141F20 /* MapKit.framework in Frameworks */,
+				C74A959714ADB3E100141F20 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +950,8 @@
 		C7FBB92F149AEFE60023DAF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C74A959614ADB3E100141F20 /* CoreLocation.framework */,
+				C74A956314ADB15700141F20 /* MapKit.framework */,
 				C7416DC814A9C09B0000F9AA /* GameKit.framework */,
 				C79D404A149EE79D00C1FA82 /* libxml2.2.dylib */,
 				C7B69D4714A4240E0048CA0F /* CoreTelephony.framework */,
@@ -1202,6 +1219,12 @@
 				C74AFD7F14AB14B500CACF9D /* CCUISlider.m */,
 				C74105F814AC3C3D00035FC7 /* CCCamera.h */,
 				C74105F914AC3C3D00035FC7 /* CCCamera.m */,
+				C74A94B314AD96D200141F20 /* CCFuntion.h */,
+				C74A94B414AD96D200141F20 /* CCFuntion.m */,
+				C74A95B314ADB5D700141F20 /* CCTestMacros.h */,
+				C74A95B414ADB5D700141F20 /* CCTestMacros.m */,
+				C74A95CA14ADB7C400141F20 /* CCMapAnnotation.h */,
+				C74A95CB14ADB7C400141F20 /* CCMapAnnotation.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1550,6 +1573,9 @@
 				C74AFD8014AB14B500CACF9D /* CCUISlider.m in Sources */,
 				C74AFE0614AB31E500CACF9D /* CCSMS.m in Sources */,
 				C74105FA14AC3C3D00035FC7 /* CCCamera.m in Sources */,
+				C74A94B514AD96D200141F20 /* CCFuntion.m in Sources */,
+				C74A95B514ADB5D700141F20 /* CCTestMacros.m in Sources */,
+				C74A95CC14ADB7C400141F20 /* CCMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

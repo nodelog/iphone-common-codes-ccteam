@@ -19,11 +19,21 @@
 	UIColor *greenColor = [UIColor greenColor];
 	[layer setBackgroundColor:greenColor.CGColor];
 	[view.layer insertSublayer:layer atIndex:0];
+	[layer release];
 }
 
 - (void)setBg:(UIImage *)img
 {
-	self.contents = img.CGImage;
+	self.contents = (id)img.CGImage;
+}
+
+// create a common layer using rect and color
++ (CALayer *)createCommonLayer:(CGRect)rect color:(UIColor *)color
+{
+	CALayer *layer = [CALayer layer];
+	layer.backgroundColor = color.CGColor;
+	layer.frame = rect;
+	return layer;
 }
 
 @end

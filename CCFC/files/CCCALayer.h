@@ -15,5 +15,7 @@
 
 - (void)setBg:(UIImage *)img;
 
+// create a common layer using rect and color
++ (CALayer *)createCommonLayer:(CGRect)rect color:(UIColor *)color;
 
 @end

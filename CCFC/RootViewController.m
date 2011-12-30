@@ -14,10 +14,47 @@
 #import "CCUIImage.h"
 #import "CCLog.h"
 #import "CCUISearchBar.h"
+#import "CCTestMacros.h"
+#import <MapKit/MKAnnotation.h>
 
 @implementation RootViewController
 
 @synthesize _tableView;
+
+#pragma mark Core Location Delegate
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+		   fromLocation:(CLLocation *)oldLocation
+{
+	LOG_ENTER_FUNC("locationManager didUpdateToLocation");
+	_loc = [newLocation coordinate];
+	MKCoordinateRegion region;
+	MKCoordinateSpan span;
+	span.latitudeDelta = 0.1; 
+	span.longitudeDelta = 0.1; 
+	LOG_DOUBLE(_loc.latitude);
+	LOG_DOUBLE(_loc.longitude);
+	
+	region.span = span;
+	region.center = _loc;
+	_map.showsUserLocation = YES;
+	_map.mapType = MKMapTypeStandard;
+	[_map setRegion:region animated:YES];
+	[_map regionThatFits:region];
+	
+	// add annotation
+	CCMapAnnotation *mapAnnotation = [[CCMapAnnotation alloc] initWithCoordinate:_loc];
+	mapAnnotation.title = @"test title";
+	mapAnnotation.subtitle = @"test subtitle";
+	[_map addAnnotation:mapAnnotation];
+	[mapAnnotation release];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+	   didFailWithError:(NSError *)error
+{
+	LOG_ENTER_FUNC("locationManager didFailWithError");
+}
 
 #pragma mark UIView delegate
 
@@ -87,6 +124,19 @@
 				 withRect:_tableView.frame];
 	 */
 	
+
+	// test backgroundColor	// ok
+//	_tableView.layer.backgroundColor = [[UIColor orangeColor] CGColor];
+	
+	// create a common layer	// ok
+//	CALayer *layer1 = [CALayer createCommonLayer:CGRectMake(20, 50, 40, 40)
+//										   color:[UIColor redColor]];
+//	layer1.shadowOffset = CGSizeMake(0, 4);
+//	layer1.shadowRadius = 7.0;
+//	layer1.shadowColor = [UIColor blackColor].CGColor;
+//	layer1.shadowOpacity = 0.7;
+//	[_tableView.layer addSublayer:layer1];
+	
 #pragma mark CCUIWindow
 	// test CCUIWindow
 	// ok
@@ -102,6 +152,26 @@
 	
 	// enableViewBelow	// ok
 	//[UIView enableViewBelow:_searchBar viewBelow:_tableView];
+	
+	// test addLayer	// ok
+//	[_tableView addLayer:CGRectMake(100, 200, 100, 80)
+//				   color:[UIColor blueColor]];
+	
+#pragma mark Google Map
+	// test MKMapView  CLLocationManager	// ok
+#if CC_ENABLE_TEST_GOOGLE_MAP
+	_map = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 416)];
+	_map.showsUserLocation = YES;
+	[self.view addSubview:_map];
+	[_map release];
+	
+	_locManager = [[CLLocationManager alloc] init];
+	_locManager.delegate = self;
+	_locManager.desiredAccuracy = kCLLocationAccuracyBest;
+	_locManager.distanceFilter = 40;
+	[_locManager startUpdatingLocation];
+#endif
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -228,6 +298,7 @@
 
 - (void)dealloc
 {
+	[_locManager release];
     [super dealloc];
 }
 
