@@ -24,4 +24,17 @@
 	return [searchBar autorelease];
 }
 
+// remove the background of the searchbar
+- (void)removeBackground
+{
+	for(UIView *subview in self.subviews)
+	{
+		if([subview isMemberOfClass:NSClassFromString(@"UISearchBarBackground")])
+		{
+			[subview removeFromSuperview];
+			break;
+		}
+	}
+}
+
 @end

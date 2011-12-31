@@ -17,5 +17,7 @@
 // create a common searchBar
 + (UISearchBar *)createCommonSearchBar:(CGRect)rect;
 
+// remove the background of the searchbar
+- (void)removeBackground;
 
 @end

@@ -17,6 +17,12 @@
 // print the retainCount of each element
 - (void)printRetainCountOfEach;
 
+// deep copy, you should release the return value outside	// not ok
+- (NSMutableArray *)deepCopy;
+
+// print all the element's address
+- (void)printAllElementAddr;
+
 
 @end
 

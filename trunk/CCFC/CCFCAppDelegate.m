@@ -54,6 +54,7 @@
 #import "CCFuntion.h"
 #import "CCLanguage.h"
 #import "CCUIApplication.h"
+#import "CCFormat.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -341,16 +342,19 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
     
 #pragma mark CCAddressBook
     // test CCAddressBook	// ok
-    /*
-    CCAddressBook *ab = [CCAddressBook new];
-    for(int i = 0; i < [ab getABRecordCount]; ++i)
-    {
-        NSLog(@"getCompositeNameByIndex %d is %@", i, [ab getCompositeNameByIndex:i]);
-        NSLog(@"getPhoneNumberArrByIndex %d is %@", i, [ab getPhoneNumberArrByIndex:i]);
-        NSLog(@"getFullNameByIndex %d is %@", i, [ab getFullNameByIndex:i]);
-    }
-    [ab release];
-     */
+
+//    CCAddressBook *ab = [CCAddressBook new];
+//    for(int i = 0; i < [ab getABRecordCount]; ++i)
+//    {
+//        NSLog(@"getCompositeNameByIndex %d is %@", i, [ab getCompositeNameByIndex:i]);
+//        NSLog(@"getPhoneNumberArrByIndex %d is %@", i, [ab getPhoneNumberArrByIndex:i]);
+//        NSLog(@"getFullNameByIndex %d is %@", i, [ab getFullNameByIndex:i]);
+//		ABRecordRef record = [ab getABRecordRefByIndex:i];
+//		// LOG_STR([CCAddressBook getFirstNamePhonetic:record]);	// not ok
+//		// LOG_STR([CCAddressBook getLastNamePhonetic:record]);	// not ok
+//    }
+//    [ab release];
+
     
 #pragma mark CCNSString
     // test CCNSString	// ok
@@ -819,6 +823,12 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	LOG_ARR(arr);
 	 */
 	
+	// test deepCopy	// not  ok
+//	NSArray *arr = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
+//	[arr printAllElementAddr];
+//	NSArray *deepcopyArr = [arr deepCopy];
+//	[deepcopyArr printAllElementAddr];
+	
 #pragma mark CCNSTimeZone
 	// test CCNSTimeZone
 	// not ok
@@ -882,7 +892,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	// test getAllLanguages	// ok
 //	LOG_ARR([CCLanguage getAllLanguages]);
 
-	
+#pragma mark CCFormat
+	// test format	// ok
+//	NSLog(@"%zu", INT_MAX + 1);
+//	NSLog(@"%d", INT_MAX + 1);
 	
 #pragma mark TestEnd
 	

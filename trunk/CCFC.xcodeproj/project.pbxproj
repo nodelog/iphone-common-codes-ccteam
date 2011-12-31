@@ -154,6 +154,7 @@
 		C736923714A4CC080054492E /* CCUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C736923614A4CC080054492E /* CCUIImageView.m */; };
 		C736926A14A4CDED0054492E /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C736926914A4CDED0054492E /* history@2x.png */; };
 		C73692A914A4D3750054492E /* questions.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C73692A814A4D3750054492E /* questions.rtf */; };
+		C73920C114AF62140009164B /* CCFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = C73920C014AF62140009164B /* CCFormat.m */; };
 		C73D559D14A56CA8000021C8 /* CCUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D559C14A56CA8000021C8 /* CCUIImage.m */; };
 		C73D563414A58363000021C8 /* CCCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D563314A58363000021C8 /* CCCALayer.m */; };
 		C73D56B314A58DF9000021C8 /* CCUILocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C73D56B214A58DF9000021C8 /* CCUILocalNotification.m */; };
@@ -451,6 +452,8 @@
 		C736923614A4CC080054492E /* CCUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIImageView.m; sourceTree = "<group>"; };
 		C736926914A4CDED0054492E /* history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history@2x.png"; sourceTree = "<group>"; };
 		C73692A814A4D3750054492E /* questions.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = questions.rtf; sourceTree = "<group>"; };
+		C73920BF14AF62140009164B /* CCFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFormat.h; sourceTree = "<group>"; };
+		C73920C014AF62140009164B /* CCFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFormat.m; sourceTree = "<group>"; };
 		C73D559C14A56CA8000021C8 /* CCUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIImage.m; sourceTree = "<group>"; };
 		C73D563214A58363000021C8 /* CCCALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCALayer.h; sourceTree = "<group>"; };
 		C73D563314A58363000021C8 /* CCCALayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCALayer.m; sourceTree = "<group>"; };
@@ -1244,6 +1247,8 @@
 				C74A9BCE14ADE9DB00141F20 /* CCUISegmentedControl.m */,
 				C74A9CFD14AE04D100141F20 /* CCRuntime.h */,
 				C74A9CFE14AE04D100141F20 /* CCRuntime.m */,
+				C73920BF14AF62140009164B /* CCFormat.h */,
+				C73920C014AF62140009164B /* CCFormat.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1598,6 +1603,7 @@
 				C74A9BC814ADE8FA00141F20 /* CCUIBarButtonItem.m in Sources */,
 				C74A9BCF14ADE9DB00141F20 /* CCUISegmentedControl.m in Sources */,
 				C74A9CFF14AE04D100141F20 /* CCRuntime.m in Sources */,
+				C73920C114AF62140009164B /* CCFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
