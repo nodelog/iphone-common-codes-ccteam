@@ -171,6 +171,28 @@
 // get the same level views arr that are in front of self
 - (NSArray *)getForewardsViews;
 
+// returns whether the touch is inside the view or not
+- (BOOL)isTouchInsideView:(UITouch *)touch;
+
+// returns whether the touch is outside the view or not
+- (BOOL)isTouchOutsideView:(UITouch *)touch;
+
+// returns whether the touch hit the view
+- (BOOL)hitView:(UIView *)view touch:(UITouch *)touch;
+// returns whether the touch hit the self
+- (BOOL)hitSelf:(UITouch *)touch;
+// returns whether the touch hit the view's subview
+- (BOOL)hitSubviews:(UITouch *)touch;
+
+// remove subviews that is member of viewStr class
+- (void)removeSubViewIsMemberOf:(NSString *)viewStr;
+// remove subviews that is kind of viewStr class
+- (void)removeSubViewIsKindOf:(NSString *)viewStr;
+// recursively remove subviews that is member of viewStr class
+- (void)removeRecursiveSubViewIsMemberOf:(NSString *)viewStr;
+// recursively remove subviews that is kind of viewStr class
+- (void)removeRecursiveSubViewIsKindOf:(NSString *)viewStr;
+
 
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 - (id)scriptingInfoWithChildren;	// the struct info of the view's children

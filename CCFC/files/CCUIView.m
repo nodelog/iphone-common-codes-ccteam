@@ -426,4 +426,85 @@
 	return retArr;
 }
 
+// returns whether the touch is inside the view or not
+- (BOOL)isTouchInsideView:(UITouch *)touch
+{
+	return [self pointInside:[touch locationInView:self] withEvent:nil];
+}
+
+// returns whether the touch is outside the view or not
+- (BOOL)isTouchOutsideView:(UITouch *)touch
+{
+	return ![self pointInside:[touch locationInView:self] withEvent:nil];
+}
+
+// returns whether the touch hit the view
+- (BOOL)hitView:(UIView *)view touch:(UITouch *)touch
+{
+	return ([self hitTest:[touch locationInView:self] withEvent:nil] == view);
+}
+
+// returns whether the touch hit the self
+- (BOOL)hitSelf:(UITouch *)touch
+{
+	return ([self hitTest:[touch locationInView:self] withEvent:nil] == self);
+}
+
+// returns whether the touch hit the view's subview
+- (BOOL)hitSubviews:(UITouch *)touch
+{
+	UIView *view = [self hitTest:[touch locationInView:self] withEvent:nil];
+	return (view != nil && view != self);
+}
+
+// remove subviews that is member of viewStr class
+- (void)removeSubViewIsMemberOf:(NSString *)viewStr
+{
+	for(UIView *view in self.subviews)
+	{
+		if([view isMemberOfClass:NSClassFromString(viewStr)])
+			[view removeFromSuperview];
+	}
+}
+
+// remove subviews that is kind of viewStr class
+- (void)removeSubViewIsKindOf:(NSString *)viewStr
+{
+	for(UIView *view in self.subviews)
+	{
+		if([view isKindOfClass:NSClassFromString(viewStr)])
+			[view removeFromSuperview];
+	}
+}
+
+// recursively remove subviews that is member of viewStr class
+- (void)removeRecursiveSubViewIsMemberOf:(NSString *)viewStr
+{
+	for(UIView *view in self.subviews)
+	{
+		if([view isMemberOfClass:NSClassFromString(viewStr)])
+		{
+			[view removeFromSuperview];
+			continue;
+		}
+		[view removeRecursiveSubViewIsMemberOf:viewStr];
+	}
+}
+
+// recursively remove subviews that is kind of viewStr class
+- (void)removeRecursiveSubViewIsKindOf:(NSString *)viewStr
+{
+	for(UIView *view in self.subviews)
+	{
+		if([view isKindOfClass:NSClassFromString(viewStr)])
+		{
+			[view removeFromSuperview];
+			continue;
+		}
+		[view removeRecursiveSubViewIsKindOf:viewStr];
+	}
+}
+
+
+
 @end

@@ -35,6 +35,19 @@
 	}
 }
 
+// deep copy, you should release the return value outside	// not ok
+- (NSMutableArray *)deepCopy
+{
+	return (NSMutableArray *)CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)self, kCFPropertyListMutableContainers);
+}
+
+// print all the element's address
+- (void)printAllElementAddr
+{
+	for(id element in self)
+		NSLog(@"element addr is %p", (void *)element);
+}
+
 @end
 
 @implementation NSMutableArray(cc)

@@ -116,5 +116,22 @@
     return  [self getFullNameByRecord:ref];
 }
 
+// get the person photo img data
+- (NSData *)getPersonPhotoImgData:(ABRecordRef)record
+{
+	return (NSData *)ABPersonCopyImageData(record);
+}
+
+// get the first name phonetic str	// not ok
++ (NSString *)getFirstNamePhonetic:(ABRecordRef)record
+{
+	return (NSString *)ABRecordCopyValue(record, kABPersonFirstNamePhoneticProperty);
+}
+
+// get the last name phonetic str	// not ok
++ (NSString *)getLastNamePhonetic:(ABRecordRef)record
+{
+	return (NSString *)ABRecordCopyValue(record, kABPersonLastNamePhoneticProperty);
+}
 
 @end
