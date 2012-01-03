@@ -107,25 +107,27 @@
 	
 	
 	// add a _webView
-	/*
-	_webView = [[UIWebView alloc] initWithFrame:
-				CGRectMake(0, 0, 320, 400)];
-
-	NSString *html = [NSString stringWithFormat:
-		@"<html><head><style>div{height:%dpx;}</style></head><body style='margin:0px'><div style='background-color:#FF0000;'></div><div style='background-color:#FFFF00;'></div><div style='background-color:#FF00FF;'></div><div style='background-color:#0000FF;'></div><div style='background-color:#00FFFF;'></div><div style='background-color:#00FF00;'></div></body></html>"
-					  , _webView.height];
+	// show the _webView	// ok
+//	_webView = [[UIWebView alloc] initWithFrame:
+//				CGRectMake(0, 0, 320, 400)];
+//
+//	NSString *html = [NSString stringWithFormat:
+//		@"<html><head>xichen welcome</head><body>I am in ccteam</body></html>"];
+//	
+//	[_webView loadHTMLString:html baseURL:nil];
+//	// not ok
+////	[_webView stringByEvaluatingJavaScriptFromString:
+////		@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '150%'"];
+////	
+//	[self.view addSubview:_webView];
+//	[_webView release];
 	
-	[_webView loadHTMLString:html baseURL:nil];
-	
-	UIScrollView *scrollView = [_webView.subviews objectAtIndex:0]; 
-	if (scrollView && [scrollView isKindOfClass:[UIScrollView class]]) 
-	{
-		scrollView.pagingEnabled = YES;	// not known
-	}
-	
-	[self.view addSubview:_webView];
-	[_webView release];
-	*/
+	// UIWebView pagingEnabled
+//	UIScrollView *scrollView = [_webView.subviews objectAtIndex:0]; 
+//	if (scrollView && [scrollView isKindOfClass:[UIScrollView class]]) 
+//	{
+//		scrollView.pagingEnabled = YES;	// not known
+//	}
 	
 	// add a searchBar
 	//_searchBar = [UISearchBar createCommonSearchBar:

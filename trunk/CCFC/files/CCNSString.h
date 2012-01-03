@@ -60,6 +60,12 @@
 // returns whether the string is in strArr(whether the strArr contains at least one string that is equalToString self)
 - (BOOL)stringInArr:(NSArray *)strArr;
 
+// create a string that comes from an int value
++ (id)stringWithInt:(int)n;
+
+// create a string that comes from an double value
++ (id)stringWithDouble:(double)d;
+
 
 @end
 

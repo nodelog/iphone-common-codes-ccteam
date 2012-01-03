@@ -18,6 +18,9 @@
 + (void)playSystemSound:(uint)sysSoundId;
 + (void)playSystemKeyboardClick;
 
+// get current route of the play or record route, eg, headphone, speaker, and so on
++ (NSString *)getCurrentRoute;
+
 @end
 
 

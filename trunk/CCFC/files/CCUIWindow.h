@@ -21,6 +21,10 @@
 					   array:(NSMutableArray *)outArray 
 					 maxSize:(int)maxSize;
 
+// alloc a window that is mainscreen bounds
++ (UIWindow *)allocMainScreenWindow;;
+
+
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 
 // uses private api

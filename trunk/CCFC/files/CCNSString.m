@@ -169,6 +169,18 @@
 	return FALSE;
 }
 
+// create a string that comes from an int value
++ (id)stringWithInt:(int)n
+{
+	return [NSString stringWithFormat:@"%d", n];
+}
+
+// create a string that comes from an double value
++ (id)stringWithDouble:(double)d
+{
+	return [NSString stringWithFormat:@"%f", d];
+}
+
 @end
 
 

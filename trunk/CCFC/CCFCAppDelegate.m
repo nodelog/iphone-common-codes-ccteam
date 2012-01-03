@@ -55,6 +55,8 @@
 #import "CCLanguage.h"
 #import "CCUIApplication.h"
 #import "CCFormat.h"
+#import "CCCreater.h"
+#import "CCSound.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -174,6 +176,14 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 {
 	UISlider *slider = (UISlider *)sender;
 	LOG_DOUBLE(slider.value);
+}
+
+#pragma mark CCSound delegate
+- (void)onVolumeChanged:(NSNotification *)noti
+{
+	LOG_ENTER_FUNC(onVolumeChanged);
+	MPMusicPlayerController *player = (MPMusicPlayerController *)noti.object;
+	LOG_DOUBLE([player volume]);
 }
 
 #pragma mark btnClickDelegate
@@ -301,9 +311,20 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	
 #pragma mark UIApplication
 	// test audio-player-event://		// not ok
-#if 0
+#if 0	// audio-player-event:// // not ok
 	[UIApplication openUrl:@"audio-player-event://?uicmd=show-purchased-playlist"];
 #endif
+	
+	
+#pragma mark CCCAudio
+	// test getCurrentRoute	// ok
+//	LOG_STR([CCAudio getCurrentRoute]);
+	
+#pragma mark CCSound
+	// test addVolumeChangeObserver
+	[CCSound addVolumeChangeObserver:self sel:@selector(onVolumeChanged:)];
+	
+
 	
 }
 
@@ -418,7 +439,22 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	LOG_STR(finalString);
 //	LOG_STR(oriString);
 	
-	
+	// test UrlEncode	// not known
+//	NSString *str = @"http://www.ccteam.com/陈曦website";
+//	NSString *urlencodeStr = [CCEncoding UrlEncode:str];	// not known
+//	LOG_STR(urlencodeStr);
+//	
+//	NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+//	char *dest = [CCCreater callocBuffer:MACRO_SMALL_BUFFER];
+//	[data URLEncode:dest len:MACRO_SMALL_BUFFER];
+//	LOG_CSTR(dest);
+//	
+//	if(!strcmp(dest, [urlencodeStr UTF8String]))
+//		LOG("OK");
+//	else 
+//		LOG("Failed");
+//	
+//	free(dest);
 	
 #pragma mark CCNSData
 	// test CCNSData		// ok
@@ -896,6 +932,18 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	// test format	// ok
 //	NSLog(@"%zu", INT_MAX + 1);
 //	NSLog(@"%d", INT_MAX + 1);
+	
+#pragma mark CCCreater
+	// test ok
+//	LOG_ARR([CCCreater arrayWithSimpleNSString:12]);
+//	LOG_ARR([CCCreater arrayWithSimpleNSString:-3 size:8]);
+//	for(int i = 0; i < 20; ++i)
+//	{
+//		LOG_INT([CCCreater int]);
+//		LOG_INT([CCCreater smallint]);
+//		LOG_INT([CCCreater smalluint]);
+//		LOG_INT([CCCreater intLessTo:34]);
+//	}
 	
 #pragma mark TestEnd
 	

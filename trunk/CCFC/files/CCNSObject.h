@@ -20,4 +20,7 @@
 - (IMP)getFuncPtr:(SEL)sel;
 + (IMP)getStaticFuncPtr:(SEL)sel;
 
+- (BOOL)isMethodStrExist:(NSString *)methodStr;
+- (BOOL)isProtocolStrExist:(NSString *)protocolStr;
+
 @end

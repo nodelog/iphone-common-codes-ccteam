@@ -11,8 +11,9 @@
 
 @interface CCAddressBook : NSObject 
 {
-    NSArray         *_abAllPeople;
-    NSArray         *_abGroups;
+	ABAddressBookRef	_addressBook;
+    NSArray				*_abAllPeople;
+    NSArray				*_abGroups;
 }
 
 - (id)init;

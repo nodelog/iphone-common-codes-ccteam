@@ -26,4 +26,14 @@
 	return [NSObject instanceMethodForSelector:sel];
 }
 
+- (BOOL)isMethodStrExist:(NSString *)methodStr
+{
+	return [self respondsToSelector:NSSelectorFromString(methodStr)];
+}
+
+- (BOOL)isProtocolStrExist:(NSString *)protocolStr
+{
+	return [self conformsToProtocol:NSProtocolFromString(protocolStr)];
+}
+
 @end

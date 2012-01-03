@@ -78,6 +78,10 @@
 #define	CC_EXTERN		extern
 #endif
 
+// buffer
+#define	MACRO_TINY_BUFFER		32
+#define	MACRO_SMALL_BUFFER		256
+
 @interface CCCommon : NSObject 
 {
     
