@@ -79,5 +79,17 @@
 	return [[[NSString alloc] initWithData:data encoding:NSUnicodeStringEncoding] autorelease];
 }
 
+// encode the str by URL encode	// not known
++ (NSString *)UrlEncode:(NSString *)str
+{
+	NSString *result = 
+		(NSString *)CFURLCreateStringByAddingPercentEscapes
+			(kCFAllocatorDefault,
+			(CFStringRef)str,
+			 NULL,
+			 CFSTR("!*'();:@&=+$.,/?%#[]"),
+			 kCFStringEncodingUTF8);
+	return [result autorelease];
+}
 
 @end

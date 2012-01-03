@@ -8,6 +8,7 @@
 
 #import "CCAudio.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "CCLog.h"
 
 @implementation CCAudio
 
@@ -34,6 +35,17 @@
 	AudioServicesPlaySystemSound(0x450);
 }
 
+// get current route of the play or record route, eg, headphone, speaker, and so on
+// eg, it returns @"Speaker", @"Headphone" and so on
++ (NSString *)getCurrentRoute
+{
+	UInt32 dataSize = sizeof(CFStringRef); 
+	CFStringRef currentRoute = NULL;
+	AudioSessionInitialize(NULL, NULL, NULL, NULL); 
+	AudioSessionGetProperty(kAudioSessionProperty_AudioRoute, &dataSize, &currentRoute); 
+	
+	return (NSString *)currentRoute;
+}
 
 @end
 

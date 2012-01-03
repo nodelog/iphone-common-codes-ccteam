@@ -47,5 +47,8 @@
 // you should make sure the cStr begins with 0xFF, 0xFE(the unicode flag).
 + (NSString *)UnicodeCStrToUnicode:(const char *)cStr withLen:(int)len;
 
+// encode the str by URL encode	// not known
++ (NSString *)UrlEncode:(NSString *)str;
+
 
 @end

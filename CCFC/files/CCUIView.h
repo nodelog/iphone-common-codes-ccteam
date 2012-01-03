@@ -193,6 +193,9 @@
 // recursively remove subviews that is kind of viewStr class
 - (void)removeRecursiveSubViewIsKindOf:(NSString *)viewStr;
 
+// set the view that it will show the view outside the frame or not
+- (void)showOutsideFrameView;
+- (void)hideOutsideFrameView;
 
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 - (id)scriptingInfoWithChildren;	// the struct info of the view's children

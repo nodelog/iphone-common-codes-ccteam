@@ -169,6 +169,7 @@
 		C7416EDB14AA1D870000F9AA /* CCUISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7416EDA14AA1D870000F9AA /* CCUISearchBar.m */; };
 		C742880614A08CB900838987 /* CCUIPasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = C742880514A08CB900838987 /* CCUIPasteboard.m */; };
 		C742888F14A0A2F700838987 /* Setting.xml in Resources */ = {isa = PBXBuildFile; fileRef = C742888E14A0A2F700838987 /* Setting.xml */; };
+		C7443C4714B3055700C588D4 /* CCSound.m in Sources */ = {isa = PBXBuildFile; fileRef = C7443C4614B3055700C588D4 /* CCSound.m */; };
 		C74A94B514AD96D200141F20 /* CCFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A94B414AD96D200141F20 /* CCFuntion.m */; };
 		C74A956414ADB15700141F20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A956314ADB15700141F20 /* MapKit.framework */; };
 		C74A959714ADB3E100141F20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A959614ADB3E100141F20 /* CoreLocation.framework */; };
@@ -205,6 +206,7 @@
 		C79D404B149EE79D00C1FA82 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C79D404A149EE79D00C1FA82 /* libxml2.2.dylib */; };
 		C79D4051149EE8B200C1FA82 /* CCXml.m in Sources */ = {isa = PBXBuildFile; fileRef = C79D4050149EE8B200C1FA82 /* CCXml.m */; };
 		C7A2B9B8149C366B002DCDCD /* CCNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A2B9B7149C366B002DCDCD /* CCNSString.m */; };
+		C7A7500814B1CBB5006F60BE /* CCCreater.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A7500714B1CBB5006F60BE /* CCCreater.m */; };
 		C7A85B8E14A5CB3B003D7CFD /* CCNSTimeZone.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A85B8D14A5CB3B003D7CFD /* CCNSTimeZone.m */; };
 		C7A97C29149CCB43001DCC24 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A97C28149CCB43001DCC24 /* CFNetwork.framework */; };
 		C7A97C2C149CCB5B001DCC24 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A97C2B149CCB5B001DCC24 /* SystemConfiguration.framework */; };
@@ -478,6 +480,8 @@
 		C742880414A08CB900838987 /* CCUIPasteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIPasteboard.h; sourceTree = "<group>"; };
 		C742880514A08CB900838987 /* CCUIPasteboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIPasteboard.m; sourceTree = "<group>"; };
 		C742888E14A0A2F700838987 /* Setting.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Setting.xml; sourceTree = "<group>"; };
+		C7443C4514B3055700C588D4 /* CCSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSound.h; sourceTree = "<group>"; };
+		C7443C4614B3055700C588D4 /* CCSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSound.m; sourceTree = "<group>"; };
 		C74A94B314AD96D200141F20 /* CCFuntion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFuntion.h; sourceTree = "<group>"; };
 		C74A94B414AD96D200141F20 /* CCFuntion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFuntion.m; sourceTree = "<group>"; };
 		C74A956314ADB15700141F20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -543,6 +547,8 @@
 		C79D4050149EE8B200C1FA82 /* CCXml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCXml.m; sourceTree = "<group>"; };
 		C7A2B9B6149C366B002DCDCD /* CCNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNSString.h; sourceTree = "<group>"; };
 		C7A2B9B7149C366B002DCDCD /* CCNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNSString.m; sourceTree = "<group>"; };
+		C7A7500614B1CBB5006F60BE /* CCCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreater.h; sourceTree = "<group>"; };
+		C7A7500714B1CBB5006F60BE /* CCCreater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreater.m; sourceTree = "<group>"; };
 		C7A85B8C14A5CB3B003D7CFD /* CCNSTimeZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNSTimeZone.h; sourceTree = "<group>"; };
 		C7A85B8D14A5CB3B003D7CFD /* CCNSTimeZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNSTimeZone.m; sourceTree = "<group>"; };
 		C7A97C28149CCB43001DCC24 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -1249,6 +1255,10 @@
 				C74A9CFE14AE04D100141F20 /* CCRuntime.m */,
 				C73920BF14AF62140009164B /* CCFormat.h */,
 				C73920C014AF62140009164B /* CCFormat.m */,
+				C7A7500614B1CBB5006F60BE /* CCCreater.h */,
+				C7A7500714B1CBB5006F60BE /* CCCreater.m */,
+				C7443C4514B3055700C588D4 /* CCSound.h */,
+				C7443C4614B3055700C588D4 /* CCSound.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1604,6 +1614,8 @@
 				C74A9BCF14ADE9DB00141F20 /* CCUISegmentedControl.m in Sources */,
 				C74A9CFF14AE04D100141F20 /* CCRuntime.m in Sources */,
 				C73920C114AF62140009164B /* CCFormat.m in Sources */,
+				C7A7500814B1CBB5006F60BE /* CCCreater.m in Sources */,
+				C7443C4714B3055700C588D4 /* CCSound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

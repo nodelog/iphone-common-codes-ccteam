@@ -60,6 +60,12 @@
 	[super getSubViewIsMemberOf:viewStr array:outArray maxSize:maxSize];
 }
 
+// alloc a window that is mainscreen bounds
++ (UIWindow *)allocMainScreenWindow
+{
+	return [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+}
+
 #if CC_ENABLE_PRIVATE_API && CC_COMPILE_PRIVATE_CLASS
 
 // uses private api

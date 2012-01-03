@@ -15,9 +15,9 @@
     self = [super init];
     if(self)
     {
-        ABAddressBookRef addressBook = ABAddressBookCreate();
-        _abAllPeople = (NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
-        _abGroups = (NSArray *)ABAddressBookCopyArrayOfAllGroups(addressBook);
+        _addressBook = ABAddressBookCreate();
+        _abAllPeople = (NSArray *)ABAddressBookCopyArrayOfAllPeople(_addressBook);
+        _abGroups = (NSArray *)ABAddressBookCopyArrayOfAllGroups(_addressBook);
     }
     return self;
 }
@@ -25,8 +25,9 @@
 
 - (void)dealloc
 {
-    [_abAllPeople release];
-    [_abGroups release];
+	CFRelease(_addressBook);
+    CFRelease(_abAllPeople);
+    CFRelease(_abGroups);
     [super dealloc];
 }
 

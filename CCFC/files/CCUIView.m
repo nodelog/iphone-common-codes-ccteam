@@ -239,6 +239,7 @@
 	}
 }
 
+
 // not ok
 - (void)commonFlip
 {
@@ -505,6 +506,16 @@
 	}
 }
 
+// set the view that it will show the view outside the frame or not
+- (void)showOutsideFrameView
+{
+	self.clipsToBounds = NO;
+}
+
+- (void)hideOutsideFrameView
+{
+	self.clipsToBounds = YES;
+}
 
 
 @end
