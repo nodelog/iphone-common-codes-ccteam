@@ -170,6 +170,10 @@
 		C742880614A08CB900838987 /* CCUIPasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = C742880514A08CB900838987 /* CCUIPasteboard.m */; };
 		C742888F14A0A2F700838987 /* Setting.xml in Resources */ = {isa = PBXBuildFile; fileRef = C742888E14A0A2F700838987 /* Setting.xml */; };
 		C7443C4714B3055700C588D4 /* CCSound.m in Sources */ = {isa = PBXBuildFile; fileRef = C7443C4614B3055700C588D4 /* CCSound.m */; };
+		C7443C5F14B3283100C588D4 /* CCPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7443C5D14B3283100C588D4 /* CCPopoverController.m */; };
+		C7443C6014B3283100C588D4 /* CCUIPopoverController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7443C5E14B3283100C588D4 /* CCUIPopoverController.xib */; };
+		C7443C9914B32CD100C588D4 /* CCNSAutoreleasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C7443C9814B32CD100C588D4 /* CCNSAutoreleasePool.m */; };
+		C7443CA514B347D200C588D4 /* CCUIToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7443CA414B347D200C588D4 /* CCUIToolBar.m */; };
 		C74A94B514AD96D200141F20 /* CCFuntion.m in Sources */ = {isa = PBXBuildFile; fileRef = C74A94B414AD96D200141F20 /* CCFuntion.m */; };
 		C74A956414ADB15700141F20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A956314ADB15700141F20 /* MapKit.framework */; };
 		C74A959714ADB3E100141F20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74A959614ADB3E100141F20 /* CoreLocation.framework */; };
@@ -482,6 +486,13 @@
 		C742888E14A0A2F700838987 /* Setting.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Setting.xml; sourceTree = "<group>"; };
 		C7443C4514B3055700C588D4 /* CCSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSound.h; sourceTree = "<group>"; };
 		C7443C4614B3055700C588D4 /* CCSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSound.m; sourceTree = "<group>"; };
+		C7443C5C14B3283100C588D4 /* CCPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPopoverController.h; sourceTree = "<group>"; };
+		C7443C5D14B3283100C588D4 /* CCPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPopoverController.m; sourceTree = "<group>"; };
+		C7443C5E14B3283100C588D4 /* CCUIPopoverController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCUIPopoverController.xib; sourceTree = "<group>"; };
+		C7443C9714B32CD100C588D4 /* CCNSAutoreleasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNSAutoreleasePool.h; sourceTree = "<group>"; };
+		C7443C9814B32CD100C588D4 /* CCNSAutoreleasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNSAutoreleasePool.m; sourceTree = "<group>"; };
+		C7443CA314B347D200C588D4 /* CCUIToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIToolBar.h; sourceTree = "<group>"; };
+		C7443CA414B347D200C588D4 /* CCUIToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIToolBar.m; sourceTree = "<group>"; };
 		C74A94B314AD96D200141F20 /* CCFuntion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFuntion.h; sourceTree = "<group>"; };
 		C74A94B414AD96D200141F20 /* CCFuntion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFuntion.m; sourceTree = "<group>"; };
 		C74A956314ADB15700141F20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -1006,6 +1017,9 @@
 				C7FBB942149AEFE60023DAF2 /* MainWindow.xib */,
 				C7FBB937149AEFE60023DAF2 /* Supporting Files */,
 				C73692A814A4D3750054492E /* questions.rtf */,
+				C7443C5C14B3283100C588D4 /* CCPopoverController.h */,
+				C7443C5D14B3283100C588D4 /* CCPopoverController.m */,
+				C7443C5E14B3283100C588D4 /* CCUIPopoverController.xib */,
 			);
 			path = CCFC;
 			sourceTree = "<group>";
@@ -1259,6 +1273,10 @@
 				C7A7500714B1CBB5006F60BE /* CCCreater.m */,
 				C7443C4514B3055700C588D4 /* CCSound.h */,
 				C7443C4614B3055700C588D4 /* CCSound.m */,
+				C7443C9714B32CD100C588D4 /* CCNSAutoreleasePool.h */,
+				C7443C9814B32CD100C588D4 /* CCNSAutoreleasePool.m */,
+				C7443CA314B347D200C588D4 /* CCUIToolBar.h */,
+				C7443CA414B347D200C588D4 /* CCUIToolBar.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1470,6 +1488,7 @@
 				2D84BED314A9A1DB003D958A /* Rukai Mask.gif in Resources */,
 				2D84BED414A9A1DB003D958A /* Tsonoqua Mask.gif in Resources */,
 				2D84BED514A9A1DB003D958A /* Yoruba Mask.gif in Resources */,
+				C7443C6014B3283100C588D4 /* CCUIPopoverController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1616,6 +1635,9 @@
 				C73920C114AF62140009164B /* CCFormat.m in Sources */,
 				C7A7500814B1CBB5006F60BE /* CCCreater.m in Sources */,
 				C7443C4714B3055700C588D4 /* CCSound.m in Sources */,
+				C7443C5F14B3283100C588D4 /* CCPopoverController.m in Sources */,
+				C7443C9914B32CD100C588D4 /* CCNSAutoreleasePool.m in Sources */,
+				C7443CA514B347D200C588D4 /* CCUIToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

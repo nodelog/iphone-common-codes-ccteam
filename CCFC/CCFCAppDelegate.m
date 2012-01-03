@@ -57,6 +57,7 @@
 #import "CCFormat.h"
 #import "CCCreater.h"
 #import "CCSound.h"
+#import "CCPopoverController.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -321,10 +322,14 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	LOG_STR([CCAudio getCurrentRoute]);
 	
 #pragma mark CCSound
-	// test addVolumeChangeObserver
-	[CCSound addVolumeChangeObserver:self sel:@selector(onVolumeChanged:)];
+	// test addVolumeChangeObserver	// ok
+//	[CCSound addVolumeChangeObserver:self sel:@selector(onVolumeChanged:)];
 	
-
+#pragma mark UIPopoverController
+	// test UIPopoverController		// ok, UIPopoverController can't be used in iphone, can only in ipad
+//	[_popoverController presentPopoverFromBarButtonItem:btn 
+//							  permittedArrowDirections:UIPopoverArrowDirectionAny 
+//											  animated:YES];  
 	
 }
 
@@ -945,6 +950,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //		LOG_INT([CCCreater intLessTo:34]);
 //	}
 	
+#pragma mark CCPopoverController
+	// test CCPopoverController	// ok, UIPopoverController can't be used in iphone, can only in ipad
+//	CCPopoverController *pop = [CCPopoverController new];
+//	pop.contentSizeForViewInPopover = CGSizeMake(200, 300);   
+//	_popoverController = [[UIPopoverController alloc] initWithContentViewController:pop]; 
+//	[pop release];
+	
+	
+	
 #pragma mark TestEnd
 	
     self.window.rootViewController = self.navigationController;
@@ -1000,6 +1014,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	[_player release];
 	[_recorder stop];
 	[_recorder release];
+	
+	[_popoverController release];
 	
     [super dealloc];
 }

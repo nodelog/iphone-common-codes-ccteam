@@ -10,11 +10,23 @@
 
 #define	RELEASE(obj)	[obj release]
 
-#define	SAFE_RELEASE(obj)	\
+#define	SAFE_DELETE(obj)	\
         {		\
             RELEASE(obj);		\
             (obj) = nil;		\
         }
+
+#define	MACRO_RELEASE_2(obj1, obj2)		\
+		[obj1 release], [obj2 release];
+
+#define	MACRO_RELEASE_3(obj1, obj2, obj3)		\
+		[obj1 release], [obj2 release], [obj3 release];
+
+#define	MACRO_DELETE_2(obj1, obj2)		\
+		[obj1 release], obj1 = nil, [obj2 release], obj2 = nil;
+
+#define	MACRO_DELETE_3(obj1, obj2, obj3)		\
+		[obj1 release], obj1 = nil, [obj2 release], obj2 = nil, [obj3 release], obj3 = nil;
 
 
 @interface CCDelete : NSObject 

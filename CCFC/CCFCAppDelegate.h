@@ -18,6 +18,7 @@
 	CCRecorder				*_recorder;
 	
 	UIButton				*btn;
+	UIPopoverController		*_popoverController;
 	
 }
 

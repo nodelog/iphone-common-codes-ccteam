@@ -18,6 +18,7 @@
 #import <MapKit/MKAnnotation.h>
 #import "CCNSTimer.h"
 #import <objc/runtime.h>
+#import "CCUIToolBar.h"
 
 @implementation RootViewController
 
@@ -72,6 +73,23 @@
 	LOG_ID([_tableView recursiveDescription]);
 }
 
+#pragma mark UIToolbar delegate
+- (void)onBarbuttonItemAdd:(id)sender
+{
+	LOG_HERE;
+}
+
+- (void)onBarbuttonItemSave:(id)sender
+{
+	LOG_HERE;
+}
+
+- (void)onBarbuttonItemEdit:(id)sender
+{
+	LOG_HERE;
+}
+
+#pragma mark view cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -79,6 +97,29 @@
 	_tableView.delegate = self;
 	_tableView.dataSource = self;
 	[_tableView reloadData];
+	
+#pragma mark UIToolbar
+	// test add UIToolbar	// ok
+//	UIBarButtonItem *item1 = [[UIBarButtonItem alloc] 
+//							 initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+//							 target:self
+//							 action:@selector(onBarbuttonItemAdd:)];
+//	UIBarButtonItem *item2 = [[UIBarButtonItem alloc] 
+//							 initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+//							 target:self
+//							 action:@selector(onBarbuttonItemSave:)];
+//	UIBarButtonItem *item3 = [[UIBarButtonItem alloc] 
+//							 initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+//							 target:self
+//							 action:@selector(onBarbuttonItemEdit:)];
+//	NSMutableArray *arr = [NSMutableArray arrayWithObjects:item1, item2, item3, nil];
+//	[item1 release];
+//	[item2 release];
+//	[item3 release];	
+//	UIToolbar *toolbar = [UIToolbar createTestToolbar:CGRectMake(20, 30, 200, 40)
+//												items:arr];
+//	[self.view addSubview:toolbar];
+	
 	
 #pragma mark objc runtime
 	// test objc_msgSend	// ok
