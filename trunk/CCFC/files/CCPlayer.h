@@ -28,4 +28,7 @@
 								  animated:(BOOL)animated;
 
 
+// get the iPod player 
++ (MPMusicPlayerController *)getIPodPlayer;
+
 @end

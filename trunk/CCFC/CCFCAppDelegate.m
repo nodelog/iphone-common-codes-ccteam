@@ -58,6 +58,9 @@
 #import "CCCreater.h"
 #import "CCSound.h"
 #import "CCPopoverController.h"
+#import "CCIPodPlayer.h"
+#import "CCMPMediaItem.h"
+#import "CCLyricsParser.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -331,6 +334,32 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //							  permittedArrowDirections:UIPopoverArrowDirectionAny 
 //											  animated:YES];  
 	
+#pragma mark CCIPodPlayer
+	// test MPMediaItem info // ok
+//	MPMediaItem *item = [CCIPodPlayer currentPlayingItem];
+//	LOG_ID(item);
+//	LOG_ID([item valueForKey:MPMediaItemPropertyTitle]);
+//	LOG_ID([item valueForKey:MPMediaItemPropertyArtist]);
+//	LOG_ID([item valueForKey:MPMediaItemPropertyAlbumTitle]);
+//	// LOG_ID([item valueForKey:MPMediaItemPropertyLyrics]);	// crash
+	
+#pragma mark CCMPMediaItem
+	// test CCMPMediaItem	// not ok
+//	MPMediaItem *item = [CCIPodPlayer currentPlayingItem];
+//	//LOG_STR([item getTitle]);
+//	//LOG_STR([item getArtist]);
+//	//LOG_STR([item getAlbumTitle]);
+	
+#pragma mark CCLyricsParser
+	// test
+	NSString *file = [CCFileUtil getFileFullPathInBundlePath:@"fh.lrc"];
+	CCLyricsParser *parser = [[CCLyricsParser alloc] initWithLyricsPath:file];
+	[parser parse];
+	LOG_STR([parser title]);
+	LOG_STR([parser artist]);
+	LOG_STR([parser album]);
+	LOG_STR([parser lyricsArr]);
+	[parser release];
 }
 
 #pragma mark application delegate
@@ -460,6 +489,14 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //		LOG("Failed");
 //	
 //	free(dest);
+	
+	NSString *str = @"荷塘";
+	const char *cStr = [CCEncoding UnicodeToGB18030:str];
+	for(int i = 0; i < strlen(cStr); ++i)
+	{
+		LOG_INT((unsigned char)cStr[i]);
+		printf("%x\n", (unsigned char)cStr[i]);
+	}
 	
 #pragma mark CCNSData
 	// test CCNSData		// ok
@@ -957,7 +994,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	_popoverController = [[UIPopoverController alloc] initWithContentViewController:pop]; 
 //	[pop release];
 	
-	
+
 	
 #pragma mark TestEnd
 	
