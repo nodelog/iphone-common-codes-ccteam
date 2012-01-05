@@ -19,6 +19,8 @@
 @property(nonatomic, assign)	float			startTime;
 @property(nonatomic, assign)	float			endTime;
 
+- (NSString *)description;
+
 @end
 
 

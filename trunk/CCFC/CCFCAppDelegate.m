@@ -190,6 +190,20 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	LOG_DOUBLE([player volume]);
 }
 
+#pragma mark onGetCurrPlayTime
+- (void)onGetCurrPlayTime:(NSTimer *)timer
+{
+	MPMusicPlayerController *ipodPlayer = [CCIPodPlayer iPodPlayer];
+	float currPlayTime = [ipodPlayer currentPlaybackTime];
+	LOG_DOUBLE(currPlayTime);
+}
+
+#pragma mark onLongPress
+- (void)onLongPress:(id)sender
+{
+	LOG_ENTER_FUNC(onLongPress);
+}
+
 #pragma mark btnClickDelegate
 - (void)onBtnClick:(id)sender
 {
@@ -341,7 +355,18 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	LOG_ID([item valueForKey:MPMediaItemPropertyTitle]);
 //	LOG_ID([item valueForKey:MPMediaItemPropertyArtist]);
 //	LOG_ID([item valueForKey:MPMediaItemPropertyAlbumTitle]);
+
 //	// LOG_ID([item valueForKey:MPMediaItemPropertyLyrics]);	// crash
+	
+	// test iPodPlayer currentPlaybackTime every 0.2 second	// ok
+//	[NSTimer scheduledTimerWithTimeInterval:0.2f
+//									 target:self
+//								   selector:@selector(onGetCurrPlayTime:) 
+//								   userInfo:nil 
+//									repeats:YES];
+//	MPMusicPlayerController *ipodPlayer = [CCIPodPlayer iPodPlayer];
+//	float currPlayTime = [ipodPlayer currentPlaybackTime];
+//	LOG_DOUBLE(currPlayTime);
 	
 #pragma mark CCMPMediaItem
 	// test CCMPMediaItem	// not ok
@@ -351,15 +376,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	//LOG_STR([item getAlbumTitle]);
 	
 #pragma mark CCLyricsParser
-	// test
-	NSString *file = [CCFileUtil getFileFullPathInBundlePath:@"fh.lrc"];
-	CCLyricsParser *parser = [[CCLyricsParser alloc] initWithLyricsPath:file];
-	[parser parse];
-	LOG_STR([parser title]);
-	LOG_STR([parser artist]);
-	LOG_STR([parser album]);
-	LOG_STR([parser lyricsArr]);
-	[parser release];
+	// test	// ok
+//	NSString *file = [CCFileUtil getFileFullPathInBundlePath:@"凤凰传奇 - 荷塘月色.lrc"];
+//	CCLyricsParser *parser = [[CCLyricsParser alloc] initWithLyricsPath:file];
+//	[parser parse];
+//	LOG_STR([parser title]);
+//	LOG_STR([parser artist]);
+//	LOG_STR([parser album]);
+//	LOG_STR([parser lyricsArr]);
+//	[parser release];
 }
 
 #pragma mark application delegate
@@ -994,7 +1019,16 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	_popoverController = [[UIPopoverController alloc] initWithContentViewController:pop]; 
 //	[pop release];
 	
-
+#pragma mark UIStatusBar addTarget
+	// test	statusBar	// ok
+//	UIView *statusBar = [[UIApplication sharedApplication] statusBar];
+//	LOG_ID(statusBar);
+	
+	// not ok
+//	UILongPressGestureRecognizer *longPressGes = [[UILongPressGestureRecognizer alloc]
+//												  initWithTarget:self action:@selector(onLongPress:)];
+//	[statusBar addGestureRecognizer:longPressGes];
+//	[longPressGes release];
 	
 #pragma mark TestEnd
 	

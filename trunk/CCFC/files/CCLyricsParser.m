@@ -8,17 +8,30 @@
 
 #import "CCLyricsParser.h"
 #import "CCCommon.h"
+#import "CCLog.h"
 
 @implementation CCLyricInfo
 
-@synthesize lyricStr;
-@synthesize startTime;
-@synthesize endTime;
+@synthesize lyricStr = _lyricStr;
+@synthesize startTime = _startTime;
+@synthesize endTime = _endTime;
+
+- (id)init
+{
+	COMMON_INIT_BEGIN
+	
+	COMMON_INIT_END
+}
 
 - (void)dealloc
 {
 	[_lyricStr release];
 	[super dealloc];
+}
+
+- (NSString *)description
+{
+	return [NSString stringWithFormat:@"%@ %f %f", _lyricStr, _startTime, _endTime];
 }
 
 @end
@@ -40,16 +53,16 @@
 	
 	_filePath = [filePath retain];
 	
-	NSData *data = [NSData dataWithContentsOfFile:_filePath];
-
 	NSError *err = nil;
-	// kCFStringEncodingGB_2312_80
-	_lyrics = [[NSString alloc] initWithContentsOfFile:_filePath 
-										encoding:kCFStringEncodingGB_2312_80
-										   error:&err];
 	
-	//if(err != nil)
-	//	return nil;
+	// by default, the lyric file uses GB18030编码
+	NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+	_lyrics = [[NSString alloc] initWithContentsOfFile:_filePath  
+											  encoding:enc 
+												 error:&err];
+	
+	if(err != nil)
+		return nil;
 	
 	_lyricsArr = [NSMutableArray array];
 	
@@ -72,9 +85,10 @@
 - (BOOL)parse
 {
 	NSArray *arr = [_lyrics componentsSeparatedByString:@"\r\n"];
-	NSLog(@"arr is %@", arr);
+	
 	for(NSString *temp in arr)
 	{
+		// analyse the header
 		int len = [temp length];
 		if([temp hasPrefix:@"[ti:"])
 		{
@@ -107,6 +121,7 @@
 				_currLyricInfo = [[CCLyricInfo alloc] init];
 				_currLyricInfo.startTime = tempTime;
 				_currLyricInfo.lyricStr = [temp substringWithRange:NSMakeRange(10, len - 10)];
+				LOG_STR(_currLyricInfo.lyricStr);
 				[_lyricsArr addObject:_currLyricInfo];
 			}
 			else
@@ -118,6 +133,7 @@
 				_currLyricInfo = [[CCLyricInfo alloc] init];
 				_currLyricInfo.startTime = tempTime;
 				_currLyricInfo.lyricStr = [temp substringWithRange:NSMakeRange(10, len - 10)];
+				LOG_STR(_currLyricInfo.lyricStr);
 				[_lyricsArr addObject:_currLyricInfo];
 			}
 				
@@ -125,6 +141,8 @@
 		}
 		
 	}
+	
+	NSLog(@"arr is %@", arr);
 	
 	return TRUE;
 }
