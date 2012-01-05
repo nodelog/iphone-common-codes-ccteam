@@ -533,7 +533,7 @@
 		C74B769314B5914900989E76 /* CCIPodPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCIPodPlayer.m; sourceTree = "<group>"; };
 		C74B76A714B59A7E00989E76 /* CCMPMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMPMediaItem.h; sourceTree = "<group>"; };
 		C74B76A814B59A7E00989E76 /* CCMPMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPMediaItem.m; sourceTree = "<group>"; };
-		C74B76D214B59FF200989E76 /* fh.lrc */ = {isa = PBXFileReference; comments = "发现此文件貌似是GB2312格式编码"; explicitFileType = text; fileEncoding = 2147486000; path = fh.lrc; sourceTree = "<group>"; };
+		C74B76D214B59FF200989E76 /* fh.lrc */ = {isa = PBXFileReference; comments = "发现此文件貌似是GB2312格式编码"; explicitFileType = text; fileEncoding = 4; path = fh.lrc; sourceTree = "<group>"; };
 		C74B76F214B5A19400989E76 /* CCLyricsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLyricsParser.h; sourceTree = "<group>"; };
 		C74B76F314B5A19400989E76 /* CCLyricsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLyricsParser.m; sourceTree = "<group>"; };
 		C74B777514B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc */ = {isa = PBXFileReference; fileEncoding = 2147486000; lastKnownFileType = text; path = "凤凰传奇 - 荷塘月色.lrc"; sourceTree = "<group>"; };
