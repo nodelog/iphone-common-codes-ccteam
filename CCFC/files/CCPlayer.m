@@ -7,7 +7,7 @@
 //
 
 #import "CCPlayer.h"
-
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation CCPlayer
 
@@ -56,5 +56,12 @@
 	
 	return [moviePlayerController autorelease];
 }
+
+// get the iPod player 
++ (MPMusicPlayerController *)getIPodPlayer
+{
+	return [MPMusicPlayerController iPodMusicPlayer];
+}
+
 
 @end

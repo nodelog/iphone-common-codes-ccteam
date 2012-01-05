@@ -192,6 +192,11 @@
 		C74AFC5814AAEA8100CACF9D /* CCUIAlertActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFC5714AAEA8100CACF9D /* CCUIAlertActivityView.m */; };
 		C74AFD8014AB14B500CACF9D /* CCUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C74AFD7F14AB14B500CACF9D /* CCUISlider.m */; };
 		C74AFE0614AB31E500CACF9D /* CCSMS.m in Sources */ = {isa = PBXBuildFile; fileRef = C722C96A149B576B00578E62 /* CCSMS.m */; };
+		C74B769414B5914900989E76 /* CCIPodPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C74B769314B5914900989E76 /* CCIPodPlayer.m */; };
+		C74B76A914B59A7E00989E76 /* CCMPMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C74B76A814B59A7E00989E76 /* CCMPMediaItem.m */; };
+		C74B76D314B59FF200989E76 /* fh.lrc in Resources */ = {isa = PBXBuildFile; fileRef = C74B76D214B59FF200989E76 /* fh.lrc */; };
+		C74B76F414B5A19400989E76 /* CCLyricsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C74B76F314B5A19400989E76 /* CCLyricsParser.m */; };
+		C74B777614B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc in Resources */ = {isa = PBXBuildFile; fileRef = C74B777514B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc */; };
 		C75A61A6149B7626003D09E1 /* CCAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = C75A61A5149B7626003D09E1 /* CCAddressBook.m */; };
 		C75A61A9149B7A97003D09E1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75A61A8149B7A97003D09E1 /* AddressBook.framework */; };
 		C7618116149CA814007D3B8A /* CCNSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7618115149CA814007D3B8A /* CCNSDate.m */; };
@@ -524,6 +529,14 @@
 		C74AFC5714AAEA8100CACF9D /* CCUIAlertActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIAlertActivityView.m; sourceTree = "<group>"; };
 		C74AFD7E14AB14B500CACF9D /* CCUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUISlider.h; sourceTree = "<group>"; };
 		C74AFD7F14AB14B500CACF9D /* CCUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUISlider.m; sourceTree = "<group>"; };
+		C74B769214B5914900989E76 /* CCIPodPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCIPodPlayer.h; sourceTree = "<group>"; };
+		C74B769314B5914900989E76 /* CCIPodPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCIPodPlayer.m; sourceTree = "<group>"; };
+		C74B76A714B59A7E00989E76 /* CCMPMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMPMediaItem.h; sourceTree = "<group>"; };
+		C74B76A814B59A7E00989E76 /* CCMPMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMPMediaItem.m; sourceTree = "<group>"; };
+		C74B76D214B59FF200989E76 /* fh.lrc */ = {isa = PBXFileReference; comments = "发现此文件貌似是GB2312格式编码"; explicitFileType = text; fileEncoding = 2147486000; path = fh.lrc; sourceTree = "<group>"; };
+		C74B76F214B5A19400989E76 /* CCLyricsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLyricsParser.h; sourceTree = "<group>"; };
+		C74B76F314B5A19400989E76 /* CCLyricsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLyricsParser.m; sourceTree = "<group>"; };
+		C74B777514B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc */ = {isa = PBXFileReference; fileEncoding = 2147486000; lastKnownFileType = text; path = "凤凰传奇 - 荷塘月色.lrc"; sourceTree = "<group>"; };
 		C75A61A4149B7626003D09E1 /* CCAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddressBook.h; sourceTree = "<group>"; };
 		C75A61A5149B7626003D09E1 /* CCAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddressBook.m; sourceTree = "<group>"; };
 		C75A61A8149B7A97003D09E1 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -1027,6 +1040,8 @@
 		C7FBB937149AEFE60023DAF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C74B777514B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc */,
+				C74B76D214B59FF200989E76 /* fh.lrc */,
 				2D84BDCC14A9A1DB003D958A /* iChat Icons */,
 				C73D56BC14A59239000021C8 /* 3@2x.png */,
 				C736926914A4CDED0054492E /* history@2x.png */,
@@ -1277,6 +1292,12 @@
 				C7443C9814B32CD100C588D4 /* CCNSAutoreleasePool.m */,
 				C7443CA314B347D200C588D4 /* CCUIToolBar.h */,
 				C7443CA414B347D200C588D4 /* CCUIToolBar.m */,
+				C74B769214B5914900989E76 /* CCIPodPlayer.h */,
+				C74B769314B5914900989E76 /* CCIPodPlayer.m */,
+				C74B76A714B59A7E00989E76 /* CCMPMediaItem.h */,
+				C74B76A814B59A7E00989E76 /* CCMPMediaItem.m */,
+				C74B76F214B5A19400989E76 /* CCLyricsParser.h */,
+				C74B76F314B5A19400989E76 /* CCLyricsParser.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1489,6 +1510,8 @@
 				2D84BED414A9A1DB003D958A /* Tsonoqua Mask.gif in Resources */,
 				2D84BED514A9A1DB003D958A /* Yoruba Mask.gif in Resources */,
 				C7443C6014B3283100C588D4 /* CCUIPopoverController.xib in Resources */,
+				C74B76D314B59FF200989E76 /* fh.lrc in Resources */,
+				C74B777614B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1638,6 +1661,9 @@
 				C7443C5F14B3283100C588D4 /* CCPopoverController.m in Sources */,
 				C7443C9914B32CD100C588D4 /* CCNSAutoreleasePool.m in Sources */,
 				C7443CA514B347D200C588D4 /* CCUIToolBar.m in Sources */,
+				C74B769414B5914900989E76 /* CCIPodPlayer.m in Sources */,
+				C74B76A914B59A7E00989E76 /* CCMPMediaItem.m in Sources */,
+				C74B76F414B5A19400989E76 /* CCLyricsParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
