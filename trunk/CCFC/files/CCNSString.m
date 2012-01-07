@@ -181,6 +181,28 @@
 	return [NSString stringWithFormat:@"%f", d];
 }
 
+// read GB2312 format file to NSString
++ (id)stringWithGB2312File:(NSString *)fileFullPath
+{
+	NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_2312_80);  
+	NSError *err = nil;
+	NSString *ret = [NSString stringWithContentsOfFile:fileFullPath encoding:enc error:&err];
+	if(err != nil)
+		return nil;
+	return ret;
+}
+
+// read GB18030 format file to NSString
++ (id)stringWithGB18030File:(NSString *)fileFullPath
+{
+	NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);  
+	NSError *err = nil;
+	NSString *ret = [NSString stringWithContentsOfFile:fileFullPath encoding:enc error:&err];
+	if(err != nil)
+		return nil;
+	return ret;
+}
+
 @end
 
 
