@@ -302,7 +302,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 #pragma mark CCNSDate
 	// printSystemDateByChineseFormat
 	// ok
-//	[NSDate printSystemDateByChineseFormat];
+	[NSDate printSystemDateByChineseFormat];
 
 #pragma mark CABasicAnimation
 	// test CABasicAnimation	// not ok

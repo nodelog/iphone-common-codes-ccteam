@@ -20,5 +20,18 @@
 // print the system date by chinese format
 + (void)printSystemDateByChineseFormat;
 
+// get the number of days from self to the current date 
+- (NSUInteger)daysAgo;
+
+// get the date of the midnight
+- (NSDate *)midnight;
+
+// get the weekday of the date
+- (NSUInteger)weekday;
+
+// the standard format of date, time, timestamp format string
++ (NSString *)dateFormatStr;
++ (NSString *)timeFormatStr;
++ (NSString *)timestampFormatStr;
 
 @end

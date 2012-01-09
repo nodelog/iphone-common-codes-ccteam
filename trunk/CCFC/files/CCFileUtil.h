@@ -66,6 +66,9 @@
 + (BOOL)deleteFileInFolder:(NSString *)folder withFileName:(NSString *)fileName;
 // delete a folder
 + (BOOL)deleteFolder:(NSString *)folderPath;
+// delete all files in a folder
++ (BOOL)deleteAllFilesInFolder:(NSString *)folderPath;
+
 
 // 文件是否存在
 + (BOOL)isFileExist:(NSString *)filePath;
