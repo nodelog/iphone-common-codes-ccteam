@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CCAudio.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface CCFCAppDelegate : NSObject <UIApplicationDelegate> 
 {
@@ -19,6 +20,8 @@
 	
 	UIButton				*btn;
 	UIPopoverController		*_popoverController;
+	
+	MPMoviePlayerController *_mp;
 	
 }
 

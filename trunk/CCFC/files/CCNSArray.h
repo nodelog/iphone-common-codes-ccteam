@@ -23,6 +23,8 @@
 // print all the element's address
 - (void)printAllElementAddr;
 
+// test CFArrayRef
++ (void)testCFArrayRef;
 
 @end
 
