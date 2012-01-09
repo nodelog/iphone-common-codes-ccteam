@@ -136,6 +136,25 @@
 	return [self deleteFileInFolder:folderPath withFileName:@""];
 }
 
+// delete all files in a folder
++ (BOOL)deleteAllFilesInFolder:(NSString *)folderPath
+{
+	NSFileManager *fileMgr = [NSFileManager defaultManager];
+	NSError *err = nil;
+	BOOL ret;
+	
+	NSArray *arr = [fileMgr contentsOfDirectoryAtPath:folderPath error:&err];
+	if(err != nil)
+		return FALSE;
+	for(NSString *file in arr)
+	{
+		ret = [self deleteFileInFolder:folderPath withFileName:file];
+		if(!ret)
+			return FALSE;
+	}
+	return TRUE;
+}
+
 // 文件是否存在
 + (BOOL)isFileExist:(NSString *)filePath
 {

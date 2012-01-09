@@ -37,10 +37,58 @@
 	//[formatter setLocale:locale];
 	//[locale release];
 	
-	[formatter setDateFormat:@"YYY年MM月d日EEEE"];
+	[formatter setDateFormat:@"YYYY年MM月d日EEEE"];
 	NSDate *date = [NSDate date];
 	NSLog(@"%@", [formatter stringFromDate:date]);
 	[formatter release];
+}
+
+// get the number of days from self to the current date 
+- (NSUInteger)daysAgo 
+{
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *components = [calendar components:NSDayCalendarUnit
+											   fromDate:self
+												 toDate:[NSDate date]
+												options:0];
+	
+	return [components day];	
+}
+
+// get the date of the midnight
+- (NSDate *)midnight
+{
+	NSDateFormatter *formatter = [NSDateFormatter new];
+	[formatter setDateFormat:@"yyyy-MM-dd"];
+	
+	NSDate *midnight = [formatter dateFromString:[formatter stringFromDate:self]];
+	[formatter release];
+	return midnight;
+}
+
+// get the weekday of the date
+- (NSUInteger)weekday 
+{
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *components = [calendar components:NSWeekdayCalendarUnit fromDate:self];
+	return [components weekday];
+	
+}
+
+// the standard format of date, time, timestamp format string
++ (NSString *)dateFormatStr 
+{
+	return @"yyyy-MM-dd";
+}
+
++ (NSString *)timeFormatStr
+{
+	return @"HH:mm:ss";
+}
+
++ (NSString *)timestampFormatStr
+{
+	return @"yyyy-MM-dd HH:mm:ss.SSS";
 }
 
 @end
