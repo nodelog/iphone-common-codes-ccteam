@@ -8,6 +8,7 @@
 
 #import "CCNSArray.h"
 #import "CCNSObject.h"
+#import "CCLog.h"
 
 @implementation NSArray(cc)
 
@@ -46,6 +47,16 @@
 {
 	for(id element in self)
 		NSLog(@"element addr is %p", (void *)element);
+}
+
+// test CFArrayRef
++ (void)testCFArrayRef
+{
+	NSString *arr[] = {@"hello", @"xichen"};
+	int arrSize = sizeof(arr) / sizeof(arr[0]);
+	CFArrayRef arrRef = CFArrayCreate(kCFAllocatorDefault, (void *)arr, (CFIndex)arrSize, NULL);
+	NSArray *nsArr = (NSArray *)arrRef;
+	LOG_ID(nsArr);
 }
 
 @end

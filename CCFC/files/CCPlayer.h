@@ -21,14 +21,22 @@
                                  isAllowMultiSelected:(BOOL)isAllowMultiSelected 
                                              animated:(BOOL)animated;
 
-// 调用系统ipod视频播放接口 not known
-+ (MPMoviePlayerViewController *)showMovieView:(id)delegate
-									urlStr:(NSString *)urlStr 
-									 style:(MPMovieControlStyle)style
-								  animated:(BOOL)animated;
+// 调用系统ipod视频播放借口	// not ok
++ (id)showMovieView:(id)delegate
+			 urlStr:(NSString *)urlStr 
+			  style:(MPMovieControlStyle)style
+		 sourceType:(MPMovieSourceType)type
+		   animated:(BOOL)animated;
 
 
 // get the iPod player 
 + (MPMusicPlayerController *)getIPodPlayer;
 
 @end
+
+@interface MPMoviePlayerViewController(cc)
+
+- (void)play;
+
+@end
+

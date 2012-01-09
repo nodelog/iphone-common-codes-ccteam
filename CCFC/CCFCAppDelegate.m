@@ -61,6 +61,7 @@
 #import "CCIPodPlayer.h"
 #import "CCMPMediaItem.h"
 #import "CCLyricsParser.h"
+#import "CCNSUserDefaults.h"
 
 void uncaughtExceptionHandler(NSException *exception) 
 {
@@ -202,6 +203,16 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 - (void)onLongPress:(id)sender
 {
 	LOG_ENTER_FUNC(onLongPress);
+}
+
+#pragma mark onPlaybackDidFinish
+- (void)onPlaybackDidFinish
+{
+	LOG_ENTER_FUNC(onPlaybackDidFinish);
+	[_mp.view removeFromSuperview];
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:MPMoviePlayerPlaybackDidFinishNotification
+												  object:nil];
 }
 
 #pragma mark btnClickDelegate
@@ -385,6 +396,39 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	LOG_STR([parser album]);
 //	LOG_STR([parser lyricsArr]);
 //	[parser release];
+	
+#pragma mark CCPlayer
+	// test showMovieView // not ok 
+	// movie播放界面可以显示，一直展示是等待状态，没有播放	
+	// sina 一个网络视频地址：http://v12.3g.sina.com.cn/tv/video/2012/01/06/803f83221b40b2/1783923_3.3gp?vud=5785696&pid=43&did=479718&cid=756&sid=0&tid=424&vt=3&wm=4007
+	NSString *urlStr = [CCFileUtil getFileFullPathInBundlePath:@"test.3gp"];
+//	MPMoviePlayerViewController *playerViewController = 
+//		[CCPlayer showMovieView:self.navigationController
+//					 urlStr:urlStr
+//					  style:MPMovieControlStyleFullscreen
+//						   sourceType:MPMovieSourceTypeFile
+//				   animated:YES];
+//	LOG_ID(playerViewController);
+	
+	// test MPMoviePlayerController // not ok	// 只是一个黑色屏幕，没有播放，也一直不返回
+//	_mp = [[MPMoviePlayerController alloc] 
+//								   initWithContentURL:[NSURL URLWithString:urlStr]];
+//
+//    if ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 3.2) 
+//	{
+//        _mp.controlStyle = MPMovieControlStyleFullscreen;
+//        [self.navigationController.view addSubview:_mp.view];
+//        [_mp.view setFrame:self.navigationController.view.bounds];
+//		
+//		[[NSNotificationCenter defaultCenter] addObserver:self 
+//											 selector:@selector(onPlaybackDidFinish)
+//												 name:MPMoviePlayerPlaybackDidFinishNotification 
+//											   object:nil];
+//		[_mp play];
+//	}
+	
+	// [playerViewController play];
+	
 }
 
 #pragma mark application delegate
@@ -932,6 +976,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	NSArray *deepcopyArr = [arr deepCopy];
 //	[deepcopyArr printAllElementAddr];
 	
+	// test testCFArrayRef	// ok
+//	[NSArray testCFArrayRef];
+	
 #pragma mark CCNSTimeZone
 	// test CCNSTimeZone
 	// not ok
@@ -1030,6 +1077,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 //	[statusBar addGestureRecognizer:longPressGes];
 //	[longPressGes release];
 	
+#pragma mark CCNSUserDefaults
+	// test printAllKeysValues	// ok
+//	[NSUserDefaults printAllKeysValues];
+	
 #pragma mark TestEnd
 	
     self.window.rootViewController = self.navigationController;
@@ -1087,7 +1138,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite NS_AVAILABLE(10_6
 	[_recorder release];
 	
 	[_popoverController release];
-	
+	[_mp release];
     [super dealloc];
 }
 

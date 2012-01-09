@@ -150,6 +150,11 @@
 		C722C97A149B5FB200578E62 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C722C979149B5FB200578E62 /* AddressBookUI.framework */; };
 		C72418C6149CA14200142B0C /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = C72418C4149CA14200142B0C /* UIDevice-Hardware.m */; };
 		C72418C7149CA14200142B0C /* UIDevice-IOKitExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C72418C5149CA14200142B0C /* UIDevice-IOKitExtensions.m */; };
+		C7319E0214BC9D450098B8A5 /* test.3gp in Resources */ = {isa = PBXBuildFile; fileRef = C7319E0114BC9D450098B8A5 /* test.3gp */; };
+		C7319E2A14BCA4710098B8A5 /* CCNSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C7319E2914BCA4710098B8A5 /* CCNSUserDefaults.m */; };
+		C7319E6814BCB2940098B8A5 /* com.apple.Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7319E6614BCB2940098B8A5 /* com.apple.Preferences.plist */; };
+		C7319E6914BCB2940098B8A5 /* .GlobalPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7319E6714BCB2940098B8A5 /* .GlobalPreferences.plist */; };
+		C7319E6D14BCB4710098B8A5 /* CCCFArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C7319E6C14BCB4710098B8A5 /* CCCFArray.m */; };
 		C73691EA14A4B8E60054492E /* CCRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = C73691E914A4B8E60054492E /* CCRandom.m */; };
 		C736923714A4CC080054492E /* CCUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C736923614A4CC080054492E /* CCUIImageView.m */; };
 		C736926A14A4CDED0054492E /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C736926914A4CDED0054492E /* history@2x.png */; };
@@ -457,6 +462,13 @@
 		C722C979149B5FB200578E62 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		C72418C4149CA14200142B0C /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		C72418C5149CA14200142B0C /* UIDevice-IOKitExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-IOKitExtensions.m"; sourceTree = "<group>"; };
+		C7319E0114BC9D450098B8A5 /* test.3gp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.3gp; sourceTree = "<group>"; };
+		C7319E2814BCA4710098B8A5 /* CCNSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNSUserDefaults.h; sourceTree = "<group>"; };
+		C7319E2914BCA4710098B8A5 /* CCNSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNSUserDefaults.m; sourceTree = "<group>"; };
+		C7319E6614BCB2940098B8A5 /* com.apple.Preferences.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = com.apple.Preferences.plist; sourceTree = "<group>"; };
+		C7319E6714BCB2940098B8A5 /* .GlobalPreferences.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = .GlobalPreferences.plist; sourceTree = "<group>"; };
+		C7319E6B14BCB4710098B8A5 /* CCCFArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCFArray.h; sourceTree = "<group>"; };
+		C7319E6C14BCB4710098B8A5 /* CCCFArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCFArray.m; sourceTree = "<group>"; };
 		C73691E814A4B8E60054492E /* CCRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRandom.h; sourceTree = "<group>"; };
 		C73691E914A4B8E60054492E /* CCRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRandom.m; sourceTree = "<group>"; };
 		C736923514A4CC080054492E /* CCUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageView.h; sourceTree = "<group>"; };
@@ -1040,6 +1052,9 @@
 		C7FBB937149AEFE60023DAF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7319E6614BCB2940098B8A5 /* com.apple.Preferences.plist */,
+				C7319E6714BCB2940098B8A5 /* .GlobalPreferences.plist */,
+				C7319E0114BC9D450098B8A5 /* test.3gp */,
 				C74B777514B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc */,
 				C74B76D214B59FF200989E76 /* fh.lrc */,
 				2D84BDCC14A9A1DB003D958A /* iChat Icons */,
@@ -1298,6 +1313,10 @@
 				C74B76A814B59A7E00989E76 /* CCMPMediaItem.m */,
 				C74B76F214B5A19400989E76 /* CCLyricsParser.h */,
 				C74B76F314B5A19400989E76 /* CCLyricsParser.m */,
+				C7319E2814BCA4710098B8A5 /* CCNSUserDefaults.h */,
+				C7319E2914BCA4710098B8A5 /* CCNSUserDefaults.m */,
+				C7319E6B14BCB4710098B8A5 /* CCCFArray.h */,
+				C7319E6C14BCB4710098B8A5 /* CCCFArray.m */,
 			);
 			path = files;
 			sourceTree = "<group>";
@@ -1512,6 +1531,9 @@
 				C7443C6014B3283100C588D4 /* CCUIPopoverController.xib in Resources */,
 				C74B76D314B59FF200989E76 /* fh.lrc in Resources */,
 				C74B777614B5C10E00989E76 /* 凤凰传奇 - 荷塘月色.lrc in Resources */,
+				C7319E0214BC9D450098B8A5 /* test.3gp in Resources */,
+				C7319E6814BCB2940098B8A5 /* com.apple.Preferences.plist in Resources */,
+				C7319E6914BCB2940098B8A5 /* .GlobalPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1664,6 +1686,8 @@
 				C74B769414B5914900989E76 /* CCIPodPlayer.m in Sources */,
 				C74B76A914B59A7E00989E76 /* CCMPMediaItem.m in Sources */,
 				C74B76F414B5A19400989E76 /* CCLyricsParser.m in Sources */,
+				C7319E2A14BCA4710098B8A5 /* CCNSUserDefaults.m in Sources */,
+				C7319E6D14BCB4710098B8A5 /* CCCFArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

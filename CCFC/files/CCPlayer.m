@@ -35,26 +35,35 @@
 	return playlistView;
 }
 
-// not known
+// not ok
 // 调用系统ipod视频播放借口
-+ (MPMoviePlayerViewController *)showMovieView:(id)delegate
-									urlStr:(NSString *)urlStr 
-									 style:(MPMovieControlStyle)style
-								  animated:(BOOL)animated
++ (id)showMovieView:(id)delegate
+			 urlStr:(NSString *)urlStr 
+			  style:(MPMovieControlStyle)style
+		 sourceType:(MPMovieSourceType)type
+		   animated:(BOOL)animated
 {
-	MPMoviePlayerViewController *moviePlayerController = 
-	[[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:urlStr]];
-	if(!moviePlayerController)
+	float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+	if(sysVer >= 3.2)
 	{
-		return nil;
-	}
-	
+		MPMoviePlayerViewController *moviePlayerController = 
+			[[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:urlStr]];
+		if(!moviePlayerController)
+			return nil;
 
-	[delegate presentMoviePlayerViewControllerAnimated:moviePlayerController];
-	moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
-	[moviePlayerController.moviePlayer play];
-	
-	return [moviePlayerController autorelease];
+		moviePlayerController.moviePlayer.movieSourceType = type;
+		[delegate presentMoviePlayerViewControllerAnimated:moviePlayerController];
+		
+		return [moviePlayerController autorelease];
+	}
+	else
+	{
+		MPMoviePlayerController *moviePlayerController = 
+			[[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:urlStr]];
+		if(!moviePlayerController)
+			return nil;
+		return [moviePlayerController autorelease];
+	}
 }
 
 // get the iPod player 
@@ -65,3 +74,14 @@
 
 
 @end
+
+
+@implementation MPMoviePlayerViewController(cc)
+
+- (void)play
+{
+	[self.moviePlayer play];
+}
+
+@end
+

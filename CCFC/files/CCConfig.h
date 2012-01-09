@@ -27,6 +27,11 @@
 #define ENABLE_UINAVIGATION_BAR_REDRAW	0
 #endif
 
+// allow the comments of the public api
+#ifndef	CC_ENABLE_PUBLIC_API_COMMENTS
+#define	CC_ENABLE_PUBLIC_API_COMMENTS	0
+#endif
+
 @interface CCConfig : NSObject 
 {
 
