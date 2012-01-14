@@ -74,7 +74,7 @@ void uncaughtExceptionHandler(NSException *exception)
 
 @synthesize window=_window;
 
-@synthesize navigationController=_navigationController;
+@synthesize navigationController=_navigationController; 
 
 #pragma mark CCAudio delegate
 - (void)onGetCurrentTime:(NSTimer *)timer
